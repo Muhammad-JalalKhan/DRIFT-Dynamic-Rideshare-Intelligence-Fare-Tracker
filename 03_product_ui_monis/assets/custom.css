@@ -1,0 +1,539 @@
+/* ==========================================================================
+   DRIFT — Dynamic Rideshare Intelligence & Fare Tracker
+   Visual Design System & Styling
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Root Variables & Typography
+   -------------------------------------------------------------------------- */
+:root {
+    --drift-bg-primary: #0b1120;
+    --drift-bg-card: #172338;
+    --drift-bg-surface: #0e1b2c;
+    --drift-accent-cyan: #22d3ee;
+    --drift-accent-cyan-hover: #06b6d4;
+    --drift-accent-cyan-dim: rgba(34, 211, 238, 0.12);
+    --drift-accent-amber: #f59e0b;
+    --drift-accent-amber-dim: rgba(245, 158, 11, 0.15);
+    --drift-text-primary: #f8fafc;
+    --drift-text-secondary: #94a3b8;
+    --drift-text-muted: #64748b;
+    --drift-border: #334155;
+    --drift-border-subtle: #1e293b;
+    --drift-radius-card: 18px;
+    --drift-radius-control: 10px;
+}
+
+body {
+    background-color: var(--drift-bg-primary);
+    color: var(--drift-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   2. Welcome Page Hero & Cards
+   -------------------------------------------------------------------------- */
+.drift-welcome {
+    min-height: 100vh;
+    padding: 90px 8% 60px;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(34, 211, 238, 0.14),
+            transparent 50%
+        ),
+        var(--drift-bg-primary);
+}
+
+.drift-eyebrow {
+    color: var(--drift-accent-cyan);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.drift-hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: var(--drift-text-primary);
+}
+
+.drift-hero-description {
+    font-size: 1.2rem;
+    color: var(--drift-text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.drift-feature-card {
+    background: rgba(23, 35, 56, 0.9);
+    border: 1px solid var(--drift-border);
+    border-radius: 20px;
+    padding: 28px;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.drift-feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--drift-accent-cyan);
+    box-shadow: 0 10px 30px -10px rgba(34, 211, 238, 0.2);
+}
+
+.drift-description {
+    color: var(--drift-text-secondary);
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   3. Ride Interface Layout & Cards
+   -------------------------------------------------------------------------- */
+.drift-main {
+    min-height: 100vh;
+    padding: 36px 4%;
+    background: var(--drift-bg-primary);
+}
+
+.drift-page-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--drift-text-primary);
+}
+
+.drift-card {
+    background: var(--drift-bg-card);
+    border: 1px solid var(--drift-border);
+    border-radius: var(--drift-radius-card);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: border-color 0.2s ease;
+}
+
+.drift-muted {
+    color: var(--drift-text-secondary);
+}
+
+.drift-muted-subtle {
+    color: var(--drift-text-muted);
+}
+
+.drift-accent {
+    color: var(--drift-accent-cyan);
+}
+
+.drift-input-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--drift-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons & Badges
+   -------------------------------------------------------------------------- */
+.drift-badge-brand {
+    background: var(--drift-accent-cyan-dim);
+    color: var(--drift-accent-cyan);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.drift-badge-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.drift-badge-warning {
+    background: var(--drift-accent-amber-dim) !important;
+    color: var(--drift-accent-amber) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    font-weight: 600;
+}
+
+.drift-btn-outline {
+    border-color: var(--drift-border) !important;
+    color: var(--drift-text-secondary) !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.drift-btn-outline:hover {
+    border-color: var(--drift-accent-cyan) !important;
+    color: var(--drift-accent-cyan) !important;
+    background: var(--drift-accent-cyan-dim) !important;
+}
+
+.drift-btn-utility {
+    background: var(--drift-bg-surface) !important;
+    border: 1px solid var(--drift-border) !important;
+    color: var(--drift-text-secondary) !important;
+    border-radius: 6px !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    padding: 3px 10px !important;
+    transition: all 0.2s ease !important;
+}
+
+.drift-btn-utility:hover {
+    border-color: var(--drift-accent-cyan) !important;
+    color: var(--drift-text-primary) !important;
+}
+
+.drift-predict-btn {
+    background-color: var(--drift-accent-cyan) !important;
+    border: none !important;
+    color: #0b1120 !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 10px 16px !important;
+    border-radius: var(--drift-radius-control) !important;
+    transition: all 0.2s ease !important;
+}
+
+.drift-predict-btn:hover:not(:disabled) {
+    background-color: var(--drift-accent-cyan-hover) !important;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.drift-predict-btn:disabled {
+    background-color: rgba(34, 211, 238, 0.2) !important;
+    color: var(--drift-text-secondary) !important;
+    border: 1px solid rgba(51, 65, 85, 0.7) !important;
+    cursor: not-allowed !important;
+    opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Map Container & Styling
+   -------------------------------------------------------------------------- */
+.drift-map-container {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--drift-bg-surface);
+    border: 1px solid var(--drift-border);
+}
+
+.drift-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-pickup {
+    background-color: var(--drift-accent-cyan);
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+.legend-dropoff {
+    background-color: var(--drift-accent-amber);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   6. Feedback, Fare & Summary Panels
+   -------------------------------------------------------------------------- */
+.drift-feedback-empty {
+    background: var(--drift-bg-surface);
+    border: 1px dashed var(--drift-border);
+}
+
+.drift-summary-strip {
+    background: var(--drift-bg-surface);
+    border: 1px solid var(--drift-border-subtle);
+}
+
+.drift-fare-box-pending {
+    background: rgba(14, 27, 44, 0.85);
+    border: 1px solid var(--drift-border);
+}
+
+.drift-contract-box {
+    background: #080f1a;
+    border: 1px solid #1e293b;
+}
+
+.drift-code-snippet {
+    color: var(--drift-accent-cyan);
+    font-size: 11px;
+    word-break: break-all;
+}
+
+.drift-alert {
+    background: rgba(34, 211, 238, 0.1) !important;
+    border: 1px solid rgba(34, 211, 238, 0.3) !important;
+    color: #e2e8f0 !important;
+    border-radius: 8px !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Comprehensive Dark Dropdown (Dash 4.5.1 + React-Select)
+   -------------------------------------------------------------------------- */
+/* Container & Variables */
+.drift-dropdown {
+    --Dash-Fill-Inverse-Strong: #f8fafc;
+    --Dash-Fill-Interactive-Strong: #22d3ee;
+    --Dash-Fill-Primary: #0e1b2c;
+    --Dash-Fill-Secondary: #172338;
+    --Dash-Stroke-Strong: #334155;
+    --Dash-Text-Primary: #f8fafc;
+    --Dash-Text-Secondary: #94a3b8;
+}
+
+/* Outer trigger & input box */
+.drift-dropdown .Select-control,
+.drift-main .dash-dropdown .dash-dropdown-trigger {
+    background-color: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    min-height: 42px !important;
+    box-shadow: none !important;
+    color: #f8fafc !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drift-dropdown .Select.is-focused > .Select-control,
+.drift-main .dash-dropdown.is-focused .dash-dropdown-trigger {
+    border-color: #22d3ee !important;
+    box-shadow: 0 0 0 1px #22d3ee !important;
+}
+
+/* Values & Placeholders */
+.drift-dropdown .Select-placeholder,
+.drift-dropdown .Select-value-label,
+.drift-dropdown .Select-value,
+.drift-main .dash-dropdown-trigger span {
+    color: #f8fafc !important;
+    font-size: 0.92rem;
+    line-height: 40px !important;
+}
+
+.drift-dropdown .Select-placeholder {
+    color: #64748b !important;
+}
+
+/* Search input text */
+.drift-dropdown .Select-input input,
+.drift-main .dash-dropdown input {
+    color: #f8fafc !important;
+    background: transparent !important;
+    font-size: 0.92rem;
+    line-height: 40px !important;
+}
+
+/* Dropdown arrow and clear button */
+.drift-dropdown .Select-arrow {
+    border-top-color: #94a3b8 !important;
+}
+
+.drift-dropdown .Select-arrow-zone:hover > .Select-arrow {
+    border-top-color: #22d3ee !important;
+}
+
+.drift-dropdown .Select-clear {
+    color: #94a3b8 !important;
+    font-size: 16px;
+}
+
+.drift-dropdown .Select-clear:hover {
+    color: #f59e0b !important;
+}
+
+/* Menu Dropdown Popup */
+.drift-dropdown .Select-menu-outer,
+.drift-main .dash-dropdown .dash-dropdown-content {
+    background-color: #172338 !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    margin-top: 4px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45) !important;
+    z-index: 1050 !important;
+    overflow: hidden !important;
+}
+
+.drift-dropdown .Select-menu {
+    background-color: #172338 !important;
+    max-height: 220px;
+}
+
+/* Options */
+.drift-dropdown .Select-option,
+.drift-dropdown .VirtualizedSelectOption,
+.drift-main .dash-dropdown .dash-dropdown-option {
+    background-color: #172338 !important;
+    color: #f8fafc !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.4) !important;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.drift-dropdown .Select-option.is-focused,
+.drift-dropdown .VirtualizedSelectFocusedOption,
+.drift-main .dash-dropdown .dash-dropdown-option:hover {
+    background-color: #164e63 !important;
+    color: #ffffff !important;
+}
+
+.drift-dropdown .Select-option.is-selected {
+    background-color: #0e7490 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.drift-dropdown .Select-noresults {
+    background-color: #172338 !important;
+    color: #94a3b8 !important;
+    padding: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   8. DatePicker Dark Theme (dcc.DatePickerSingle)
+   -------------------------------------------------------------------------- */
+.drift-date-picker .SingleDatePicker,
+.drift-date-picker .SingleDatePickerInput {
+    background: transparent !important;
+    border: none !important;
+    width: 100%;
+}
+
+.drift-date-picker .DateInput {
+    background: transparent !important;
+    width: 100%;
+}
+
+.drift-date-picker .DateInput_input {
+    background-color: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    color: #f8fafc !important;
+    font-size: 0.9rem !important;
+    padding: 8px 12px !important;
+    line-height: 24px !important;
+    width: 100% !important;
+    transition: border-color 0.2s ease;
+}
+
+.drift-date-picker .DateInput_input__focused {
+    border-color: #22d3ee !important;
+    box-shadow: 0 0 0 1px #22d3ee !important;
+}
+
+.drift-date-picker .SingleDatePicker_picker {
+    background-color: #172338 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1060 !important;
+}
+
+.drift-date-picker .DayPickerNavigation_button {
+    background: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+}
+
+.drift-date-picker .CalendarMonth,
+.drift-date-picker .CalendarMonthGrid {
+    background-color: #172338 !important;
+}
+
+.drift-date-picker .CalendarMonth_caption {
+    color: #f8fafc !important;
+}
+
+.drift-date-picker .DayPicker_weekHeader {
+    color: #94a3b8 !important;
+}
+
+.drift-date-picker .CalendarDay__default {
+    background-color: #172338 !important;
+    color: #f8fafc !important;
+    border: 1px solid #1e293b !important;
+}
+
+.drift-date-picker .CalendarDay__default:hover {
+    background-color: #164e63 !important;
+    color: #ffffff !important;
+}
+
+.drift-date-picker .CalendarDay__selected {
+    background-color: #22d3ee !important;
+    color: #0b1120 !important;
+    font-weight: 700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive Breakpoints & Accessibility
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .drift-map-container {
+        height: 420px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .drift-welcome {
+        padding: 55px 16px 30px;
+    }
+
+    .drift-main {
+        padding: 24px 14px;
+    }
+
+    .drift-page-title {
+        font-size: 1.6rem;
+    }
+
+    .drift-feature-card {
+        padding: 16px;
+    }
+
+    .drift-hero-title {
+        letter-spacing: -1px;
+    }
+
+    .drift-map-container {
+        height: 330px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .drift-feature-card,
+    .drift-card,
+    .drift-predict-btn,
+    .drift-btn-outline,
+    .drift-btn-utility {
+        transition: none !important;
+    }
+
+    .drift-feature-card:hover {
+        transform: none !important;
+    }
+}
