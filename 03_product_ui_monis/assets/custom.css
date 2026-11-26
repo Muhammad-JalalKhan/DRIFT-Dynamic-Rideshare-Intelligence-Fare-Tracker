@@ -1,0 +1,939 @@
+/* ==========================================================================
+   DRIFT — Dynamic Rideshare Intelligence & Fare Tracker
+   Visual Design System & Styling
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Root Variables & Typography
+   -------------------------------------------------------------------------- */
+:root {
+    --drift-bg-primary: #0b1120;
+    --drift-bg-card: #172338;
+    --drift-bg-surface: #0e1b2c;
+    --drift-accent-cyan: #22d3ee;
+    --drift-accent-cyan-hover: #06b6d4;
+    --drift-accent-cyan-dim: rgba(34, 211, 238, 0.12);
+    --drift-accent-amber: #f59e0b;
+    --drift-accent-amber-dim: rgba(245, 158, 11, 0.15);
+    --drift-text-primary: #f8fafc;
+    --drift-text-secondary: #94a3b8;
+    --drift-text-muted: #64748b;
+    --drift-border: #334155;
+    --drift-border-subtle: #1e293b;
+    --drift-radius-card: 18px;
+    --drift-radius-control: 10px;
+}
+
+body {
+    background-color: var(--drift-bg-primary);
+    color: var(--drift-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   2. Welcome Page Hero & Cards
+   -------------------------------------------------------------------------- */
+.drift-welcome {
+    min-height: 100vh;
+    padding: 90px 8% 60px;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(34, 211, 238, 0.14),
+            transparent 50%
+        ),
+        var(--drift-bg-primary);
+}
+
+.drift-eyebrow {
+    color: var(--drift-accent-cyan);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.drift-hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: var(--drift-text-primary);
+}
+
+.drift-hero-description {
+    font-size: 1.2rem;
+    color: var(--drift-text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.drift-feature-card {
+    background: rgba(23, 35, 56, 0.9);
+    border: 1px solid var(--drift-border);
+    border-radius: 20px;
+    padding: 28px;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.drift-feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--drift-accent-cyan);
+    box-shadow: 0 10px 30px -10px rgba(34, 211, 238, 0.2);
+}
+
+.drift-description {
+    color: var(--drift-text-secondary);
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   3. Ride Interface Layout & Cards
+   -------------------------------------------------------------------------- */
+.drift-main {
+    min-height: 100vh;
+    padding: 36px 4%;
+    background: var(--drift-bg-primary);
+}
+
+.drift-page-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--drift-text-primary);
+}
+
+.drift-card {
+    background: var(--drift-bg-card);
+    border: 1px solid var(--drift-border);
+    border-radius: var(--drift-radius-card);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: border-color 0.2s ease;
+}
+
+.drift-muted {
+    color: var(--drift-text-secondary);
+}
+
+.drift-muted-subtle {
+    color: var(--drift-text-muted);
+}
+
+.drift-accent {
+    color: var(--drift-accent-cyan);
+}
+
+.drift-input-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--drift-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   4. Buttons & Badges
+   -------------------------------------------------------------------------- */
+.drift-badge-brand {
+    background: var(--drift-accent-cyan-dim);
+    color: var(--drift-accent-cyan);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.drift-badge-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.drift-badge-warning {
+    background: var(--drift-accent-amber-dim) !important;
+    color: var(--drift-accent-amber) !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    font-weight: 600;
+}
+
+.drift-btn-outline {
+    border-color: var(--drift-border) !important;
+    color: var(--drift-text-secondary) !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.drift-btn-outline:hover {
+    border-color: var(--drift-accent-cyan) !important;
+    color: var(--drift-accent-cyan) !important;
+    background: var(--drift-accent-cyan-dim) !important;
+}
+
+.drift-btn-utility {
+    background: var(--drift-bg-surface) !important;
+    border: 1px solid var(--drift-border) !important;
+    color: var(--drift-text-secondary) !important;
+    border-radius: 6px !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    padding: 3px 10px !important;
+    transition: all 0.2s ease !important;
+}
+
+.drift-btn-utility:hover {
+    border-color: var(--drift-accent-cyan) !important;
+    color: var(--drift-text-primary) !important;
+}
+
+.drift-predict-btn {
+    background-color: var(--drift-accent-cyan) !important;
+    border: none !important;
+    color: #0b1120 !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 10px 16px !important;
+    border-radius: var(--drift-radius-control) !important;
+    transition: all 0.2s ease !important;
+}
+
+.drift-predict-btn:hover:not(:disabled) {
+    background-color: var(--drift-accent-cyan-hover) !important;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.drift-predict-btn:disabled {
+    background-color: rgba(34, 211, 238, 0.2) !important;
+    color: var(--drift-text-secondary) !important;
+    border: 1px solid rgba(51, 65, 85, 0.7) !important;
+    cursor: not-allowed !important;
+    opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Map Container & Styling
+   -------------------------------------------------------------------------- */
+.drift-map-container {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--drift-bg-surface);
+    border: 1px solid var(--drift-border);
+}
+
+.drift-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-pickup {
+    background-color: var(--drift-accent-cyan);
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+.legend-dropoff {
+    background-color: var(--drift-accent-amber);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   6. Feedback, Fare & Summary Panels
+   -------------------------------------------------------------------------- */
+.drift-feedback-empty {
+    background: var(--drift-bg-surface);
+    border: 1px dashed var(--drift-border);
+}
+
+.drift-summary-strip {
+    background: var(--drift-bg-surface);
+    border: 1px solid var(--drift-border-subtle);
+}
+
+.drift-fare-box-pending {
+    background: rgba(14, 27, 44, 0.85);
+    border: 1px solid var(--drift-border);
+}
+
+.drift-contract-box {
+    background: #080f1a;
+    border: 1px solid #1e293b;
+}
+
+.drift-code-snippet {
+    color: var(--drift-accent-cyan);
+    font-size: 11px;
+    word-break: break-all;
+}
+
+.drift-alert {
+    background: rgba(34, 211, 238, 0.1) !important;
+    border: 1px solid rgba(34, 211, 238, 0.3) !important;
+    color: #e2e8f0 !important;
+    border-radius: 8px !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Comprehensive Dark Dropdown (Dash 4.5.1 + Native Dash-Dropdown + Fallback)
+   -------------------------------------------------------------------------- */
+/* Container & Variables: Targets Dash 4.5.1 native CSS vars */
+:root,
+body,
+.drift-main,
+.drift-dropdown,
+.dash-dropdown,
+.dash-dropdown-content,
+.Select {
+    --Dash-Fill-Inverse-Strong: #172338 !important;  /* Menus & search box background */
+    --Dash-Fill-Primary: #0e1b2c !important;         /* Outer trigger background */
+    --Dash-Fill-Secondary: #172338 !important;
+    --Dash-Fill-Disabled: #334155 !important;        /* Option divider border */
+    --Dash-Fill-Interactive-Strong: #22d3ee !important;/* Focus outline & icon color */
+    --Dash-Fill-Interactive-Weak: #164e63 !important;  /* Value count badge */
+    --Dash-Stroke-Strong: #334155 !important;        /* Borders */
+    --Dash-Text-Strong: #f8fafc !important;          /* Option text */
+    --Dash-Text-Weak: #94a3b8 !important;            /* Helper text & action buttons */
+    --Dash-Text-Disabled: #64748b !important;        /* Placeholder text */
+    --Dash-Text-Primary: #f8fafc !important;
+    --Dash-Text-Secondary: #94a3b8 !important;
+    --Dash-Shading-Strong: rgba(0, 0, 0, 0.6) !important;
+    --Dash-Shading-Weak: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Dash 4.5.1 Native Dropdown Trigger Box */
+.dash-dropdown {
+    background: #0e1b2c !important;
+    background-color: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    min-height: 42px !important;
+    color: #f8fafc !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.dash-dropdown:focus,
+.dash-dropdown:focus-within {
+    border-color: #22d3ee !important;
+    outline: 1px solid #22d3ee !important;
+    box-shadow: 0 0 0 1px #22d3ee !important;
+}
+
+.dash-dropdown-trigger {
+    padding: 0 12px !important;
+    min-height: 40px !important;
+    color: #f8fafc !important;
+}
+
+.dash-dropdown-value {
+    color: #f8fafc !important;
+    font-size: 0.92rem !important;
+}
+
+.dash-dropdown-placeholder {
+    color: #64748b !important;
+}
+
+/* Dash 4.5.1 Popover / Menu Content */
+.dash-dropdown-content {
+    background: #172338 !important;
+    background-color: #172338 !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5) !important;
+    color: #f8fafc !important;
+    z-index: 1050 !important;
+}
+
+/* Dash 4.5.1 Search Field inside Dropdown Menu */
+.dash-dropdown-search-container {
+    background: #0e1b2c !important;
+    background-color: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: 6px !important;
+    margin: 8px !important;
+    padding: 6px 10px !important;
+}
+
+.dash-dropdown-search-container:focus-within {
+    border-color: #22d3ee !important;
+    outline: 1px solid #22d3ee !important;
+}
+
+.dash-dropdown-search {
+    color: #f8fafc !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    font-size: 0.92rem !important;
+    caret-color: #22d3ee !important;
+    outline: none !important;
+    border: none !important;
+}
+
+/* Dash 4.5.1 Options List & Options */
+.dash-dropdown-options {
+    background: #172338 !important;
+    background-color: #172338 !important;
+}
+
+.dash-dropdown-option {
+    background: #172338 !important;
+    background-color: #172338 !important;
+    color: #f8fafc !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 -1px 0 0 rgba(51, 65, 85, 0.4) inset !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.dash-dropdown-option:hover,
+.dash-dropdown-option:focus,
+.dash-dropdown-option:focus-within {
+    background: #164e63 !important;
+    background-color: #164e63 !important;
+    color: #ffffff !important;
+}
+
+.dash-dropdown-option:has(input:checked) {
+    background: #0e7490 !important;
+    background-color: #0e7490 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Dash 4.5.1 Action Buttons (Select all, Clear) */
+.dash-dropdown-actions {
+    background: #0e1b2c !important;
+    border-top: 1px solid #334155 !important;
+    border-bottom: 1px solid #334155 !important;
+    padding: 6px 12px !important;
+}
+
+.dash-dropdown-action-button {
+    color: #94a3b8 !important;
+}
+
+.dash-dropdown-action-button:hover {
+    color: #22d3ee !important;
+}
+
+/* Icons & Counts */
+.dash-dropdown-clear,
+.dash-dropdown-trigger-icon,
+.dash-dropdown-search-icon {
+    color: #94a3b8 !important;
+    fill: #94a3b8 !important;
+}
+
+.dash-dropdown-clear:hover,
+.dash-dropdown-trigger-icon:hover {
+    color: #22d3ee !important;
+    fill: #22d3ee !important;
+}
+
+.dash-dropdown-value-count {
+    background: #164e63 !important;
+    color: #22d3ee !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+}
+
+/* Outer trigger & input box (Fallback / Legacy support) */
+.drift-dropdown .Select-control,
+.Select-control,
+div[class*="-control"] {
+    background-color: #0e1b2c !important;
+    background: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    min-height: 42px !important;
+    box-shadow: none !important;
+    color: #f8fafc !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.drift-dropdown .Select.is-focused > .Select-control,
+.Select.is-focused > .Select-control,
+div[class*="-control"]:focus-within {
+    border-color: #22d3ee !important;
+    box-shadow: 0 0 0 1px #22d3ee !important;
+}
+
+/* Values & Placeholders */
+.drift-dropdown .Select-placeholder,
+.drift-dropdown .Select-value-label,
+.drift-dropdown .Select-value,
+.Select-placeholder,
+.Select-value-label,
+.Select-value,
+div[class*="-placeholder"],
+div[class*="-singleValue"] {
+    color: #f8fafc !important;
+    font-size: 0.92rem;
+}
+
+.drift-dropdown .Select-placeholder,
+.Select-placeholder,
+div[class*="-placeholder"] {
+    color: #64748b !important;
+}
+
+/* Search input text */
+.drift-dropdown .Select-input,
+.Select-input {
+    vertical-align: middle !important;
+}
+
+.drift-dropdown .Select-input input,
+.Select-input input,
+.Select-input > input,
+div[class*="-Input"] input {
+    color: #f8fafc !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    font-size: 0.92rem;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    caret-color: #22d3ee !important;
+}
+
+/* Dropdown arrow and clear button */
+.drift-dropdown .Select-arrow,
+.Select-arrow {
+    border-top-color: #94a3b8 !important;
+}
+
+.drift-dropdown .Select-arrow-zone:hover > .Select-arrow,
+.Select-arrow-zone:hover > .Select-arrow {
+    border-top-color: #22d3ee !important;
+}
+
+.drift-dropdown .Select-clear,
+.Select-clear {
+    color: #94a3b8 !important;
+    font-size: 16px;
+}
+
+.drift-dropdown .Select-clear:hover,
+.Select-clear:hover {
+    color: #f59e0b !important;
+}
+
+/* Menu Dropdown Popup */
+.Select-menu-outer,
+.Select-menu,
+div[class*="-menu"],
+div[class*="-MenuList"] {
+    background-color: #172338 !important;
+    background: #172338 !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    margin-top: 4px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45) !important;
+    z-index: 1050 !important;
+    overflow-y: auto !important;
+}
+
+.Select-menu {
+    max-height: 220px;
+}
+
+/* Options */
+.Select-option,
+.VirtualizedSelectOption,
+div[class*="-option"] {
+    background-color: #172338 !important;
+    background: #172338 !important;
+    color: #f8fafc !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.4) !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.Select-option.is-focused,
+.Select-option:hover,
+.VirtualizedSelectFocusedOption,
+div[class*="-option"]:hover,
+div[class*="-option"][class*="-is-focused"] {
+    background-color: #164e63 !important;
+    background: #164e63 !important;
+    color: #ffffff !important;
+}
+
+.Select-option.is-selected,
+div[class*="-option"][class*="-is-selected"] {
+    background-color: #0e7490 !important;
+    background: #0e7490 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.Select-option.is-selected.is-focused,
+div[class*="-option"][class*="-is-selected"][class*="-is-focused"] {
+    background-color: #0891b2 !important;
+    color: #ffffff !important;
+}
+
+.Select-noresults,
+div[class*="-NoOptionsMessage"] {
+    background-color: #172338 !important;
+    color: #94a3b8 !important;
+    padding: 14px;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+/* Presentation Mode: Suppress floating devtools icon if inadvertently injected */
+.dash-debug-menu,
+.dash-debug-menu__outer {
+    display: none !important;
+}
+
+/* Multi-select Dropdown Pills */
+.Select--multi .Select-value,
+.dash-dropdown-multi-value,
+div[class*="-MultiValueGeneric"],
+div[class*="-multiValue"] {
+    background-color: #164e63 !important;
+    border: 1px solid rgba(34, 211, 238, 0.4) !important;
+    color: #f8fafc !important;
+    border-radius: 6px !important;
+    margin: 3px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.Select--multi .Select-value-label,
+.dash-dropdown-multi-value-label,
+div[class*="-MultiValueGeneric"] span {
+    color: #f8fafc !important;
+    font-size: 0.82rem !important;
+    padding: 2px 8px !important;
+    line-height: 22px !important;
+}
+
+.Select--multi .Select-value-icon,
+.dash-dropdown-multi-value-remove,
+div[class*="-multiValue"] [class*="remove"] {
+    border-right: 1px solid rgba(34, 211, 238, 0.3) !important;
+    color: #94a3b8 !important;
+    padding: 2px 6px !important;
+    cursor: pointer !important;
+}
+
+.Select--multi .Select-value-icon:hover,
+.dash-dropdown-multi-value-remove:hover,
+div[class*="-multiValue"] [class*="remove"]:hover {
+    background-color: rgba(245, 158, 11, 0.25) !important;
+    color: #f59e0b !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. DatePicker Dark Theme (dcc.DatePickerSingle)
+   -------------------------------------------------------------------------- */
+.drift-date-picker .SingleDatePicker,
+.drift-date-picker .SingleDatePickerInput {
+    background: transparent !important;
+    border: none !important;
+    width: 100%;
+}
+
+.drift-date-picker .DateInput {
+    background: transparent !important;
+    width: 100%;
+}
+
+.drift-date-picker .DateInput_input {
+    background-color: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    color: #f8fafc !important;
+    font-size: 0.9rem !important;
+    padding: 8px 12px !important;
+    line-height: 24px !important;
+    width: 100% !important;
+    transition: border-color 0.2s ease;
+}
+
+.drift-date-picker .DateInput_input__focused {
+    border-color: #22d3ee !important;
+    box-shadow: 0 0 0 1px #22d3ee !important;
+}
+
+.drift-date-picker .SingleDatePicker_picker {
+    background-color: #172338 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1060 !important;
+}
+
+.drift-date-picker .DayPickerNavigation_button {
+    background: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+}
+
+.drift-date-picker .CalendarMonth,
+.drift-date-picker .CalendarMonthGrid {
+    background-color: #172338 !important;
+}
+
+.drift-date-picker .CalendarMonth_caption {
+    color: #f8fafc !important;
+}
+
+.drift-date-picker .DayPicker_weekHeader {
+    color: #94a3b8 !important;
+}
+
+.drift-date-picker .CalendarDay__default {
+    background-color: #172338 !important;
+    color: #f8fafc !important;
+    border: 1px solid #1e293b !important;
+}
+
+.drift-date-picker .CalendarDay__default:hover {
+    background-color: #164e63 !important;
+    color: #ffffff !important;
+}
+
+.drift-date-picker .CalendarDay__selected {
+    background-color: #22d3ee !important;
+    color: #0b1120 !important;
+    font-weight: 700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive Breakpoints & Accessibility
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .drift-map-container {
+        height: 420px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .drift-welcome {
+        padding: 55px 16px 30px;
+    }
+
+    .drift-main {
+        padding: 24px 14px;
+    }
+
+    .drift-page-title {
+        font-size: 1.6rem;
+    }
+
+    .drift-feature-card {
+        padding: 16px;
+    }
+
+    .drift-hero-title {
+        letter-spacing: -1px;
+    }
+
+    .drift-map-container {
+        height: 330px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .drift-feature-card,
+    .drift-card,
+    .drift-predict-btn,
+    .drift-btn-outline,
+    .drift-btn-utility {
+        transition: none !important;
+    }
+
+    .drift-feature-card:hover {
+        transform: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. Phase 2: DRIFT Intelligence & KPI Cards
+   -------------------------------------------------------------------------- */
+
+.drift-kpi-card {
+    border-top: 2px solid var(--drift-accent-cyan) !important;
+    background: linear-gradient(180deg, rgba(23, 35, 56, 0.98) 0%, rgba(14, 27, 44, 0.95) 100%) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drift-kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border-color: var(--drift-accent-cyan) !important;
+}
+
+.drift-kpi-val {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.drift-kpi-unit {
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.drift-kpi-icon {
+    font-size: 1.25rem;
+}
+
+/* Responsive grid padding for charts */
+.drift-card .js-plotly-plot,
+.drift-card .plot-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   11. Phase 2 Demo Mode & Source Selector
+   -------------------------------------------------------------------------- */
+
+.drift-source-bar {
+    background: #0e1b2c;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.drift-source-toggle .form-check {
+    margin-right: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.drift-source-toggle .form-check-input {
+    background-color: #0b1120;
+    border-color: #334155;
+    cursor: pointer;
+    width: 1.15em;
+    height: 1.15em;
+    margin-top: 0;
+}
+
+.drift-source-toggle .form-check-input:checked {
+    background-color: #22d3ee;
+    border-color: #22d3ee;
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+}
+
+.drift-source-toggle .form-check-label {
+    color: #f8fafc;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.drift-demo-banner {
+    background: rgba(245, 158, 11, 0.08) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(8px);
+}
+
+/* --------------------------------------------------------------------------
+   12. Milestone 4 Mobile SaaS, Fraud Guard & Touch Polish
+   -------------------------------------------------------------------------- */
+
+.drift-navbar {
+    background: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+}
+
+.drift-nav-link {
+    color: #94a3b8 !important;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border-radius: 6px;
+    padding: 6px 12px !important;
+}
+
+.drift-nav-link:hover,
+.drift-nav-link:focus {
+    color: #f8fafc !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.drift-btn-chip {
+    background-color: #172338 !important;
+    border: 1px solid #334155 !important;
+    color: #e2e8f0 !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    padding: 5px 12px !important;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.drift-btn-chip:hover {
+    border-color: #22d3ee !important;
+    color: #22d3ee !important;
+    background-color: #1e2e46 !important;
+    transform: translateY(-1px);
+}
+
+.drift-diagnostic-panel {
+    background: rgba(14, 27, 44, 0.7);
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+}
+
+.drift-diagnostic-li {
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+/* Ensure mobile form controls have font-size >= 16px to prevent iOS auto-zoom */
+@media (max-width: 768px) {
+    input, select, textarea, .form-control, .drift-form-control {
+        font-size: 16px !important;
+        min-height: 44px;
+    }
+
+    .drift-predict-btn,
+    .drift-btn-utility,
+    .drift-btn-outline {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

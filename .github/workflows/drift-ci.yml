@@ -18,7 +18,7 @@ jobs:
         run: |
           LARGE_FILES=$(find . -not -path '*/.*' -type f -size +15M)
           if [ -n "$LARGE_FILES" ]; then
-            echo "ERROR: Large files (>15MB) detected. Keep large datasets on Google Drive:"
+            echo "ERROR: Large files (>15MB) detected:"
             echo "$LARGE_FILES"
             exit 1
           fi
@@ -35,20 +35,12 @@ jobs:
           pip install -r requirements.txt
 
       - name: 5. Verify Serialized ML Models Load Cleanly
-        run: |
-          python -c "
-          import glob, joblib
-          pkl_files = glob.glob('02_ml_modeling_anoushey/saved_models/*.pkl')
-          print(f'Found {len(pkl_files)} model bundles:', pkl_files)
-          for f in pkl_files:
-              obj = joblib.load(f)
-              print('Loaded successfully:', f, type(obj))
-          "
+        run: python -c "import glob, joblib; files = glob.glob('02_ml_modeling_anoushey/saved_models/*.pkl'); print('Models found:', files); [joblib.load(f) for f in files]; print('All models loaded cleanly!')"
 
       - name: 6. Run Product UI Automated Unit Tests
         run: |
           if [ -d "03_product_ui_monis" ]; then
             python -m unittest discover -s 03_product_ui_monis -p "test*.py" -v
           else
-            echo "UI folder not merged yet - skipping UI tests."
+            echo "UI folder not found - skipping."
           fi
