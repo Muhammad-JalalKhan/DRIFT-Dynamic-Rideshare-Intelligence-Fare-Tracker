@@ -292,33 +292,187 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   7. Comprehensive Dark Dropdown (Dash 4.5.1 + React-Select)
+   7. Comprehensive Dark Dropdown (Dash 4.5.1 + Native Dash-Dropdown + Fallback)
    -------------------------------------------------------------------------- */
-/* Container & Variables */
-.drift-dropdown {
-    --Dash-Fill-Inverse-Strong: #f8fafc;
-    --Dash-Fill-Interactive-Strong: #22d3ee;
-    --Dash-Fill-Primary: #0e1b2c;
-    --Dash-Fill-Secondary: #172338;
-    --Dash-Stroke-Strong: #334155;
-    --Dash-Text-Primary: #f8fafc;
-    --Dash-Text-Secondary: #94a3b8;
+/* Container & Variables: Targets Dash 4.5.1 native CSS vars */
+:root,
+body,
+.drift-main,
+.drift-dropdown,
+.dash-dropdown,
+.dash-dropdown-content,
+.Select {
+    --Dash-Fill-Inverse-Strong: #172338 !important;  /* Menus & search box background */
+    --Dash-Fill-Primary: #0e1b2c !important;         /* Outer trigger background */
+    --Dash-Fill-Secondary: #172338 !important;
+    --Dash-Fill-Disabled: #334155 !important;        /* Option divider border */
+    --Dash-Fill-Interactive-Strong: #22d3ee !important;/* Focus outline & icon color */
+    --Dash-Fill-Interactive-Weak: #164e63 !important;  /* Value count badge */
+    --Dash-Stroke-Strong: #334155 !important;        /* Borders */
+    --Dash-Text-Strong: #f8fafc !important;          /* Option text */
+    --Dash-Text-Weak: #94a3b8 !important;            /* Helper text & action buttons */
+    --Dash-Text-Disabled: #64748b !important;        /* Placeholder text */
+    --Dash-Text-Primary: #f8fafc !important;
+    --Dash-Text-Secondary: #94a3b8 !important;
+    --Dash-Shading-Strong: rgba(0, 0, 0, 0.6) !important;
+    --Dash-Shading-Weak: rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Outer trigger & input box */
-.drift-dropdown .Select-control,
-.drift-main .dash-dropdown .dash-dropdown-trigger {
+/* Dash 4.5.1 Native Dropdown Trigger Box */
+.dash-dropdown {
+    background: #0e1b2c !important;
     background-color: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    min-height: 42px !important;
+    color: #f8fafc !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.dash-dropdown:focus,
+.dash-dropdown:focus-within {
+    border-color: #22d3ee !important;
+    outline: 1px solid #22d3ee !important;
+    box-shadow: 0 0 0 1px #22d3ee !important;
+}
+
+.dash-dropdown-trigger {
+    padding: 0 12px !important;
+    min-height: 40px !important;
+    color: #f8fafc !important;
+}
+
+.dash-dropdown-value {
+    color: #f8fafc !important;
+    font-size: 0.92rem !important;
+}
+
+.dash-dropdown-placeholder {
+    color: #64748b !important;
+}
+
+/* Dash 4.5.1 Popover / Menu Content */
+.dash-dropdown-content {
+    background: #172338 !important;
+    background-color: #172338 !important;
+    border: 1px solid #334155 !important;
+    border-radius: var(--drift-radius-control) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5) !important;
+    color: #f8fafc !important;
+    z-index: 1050 !important;
+}
+
+/* Dash 4.5.1 Search Field inside Dropdown Menu */
+.dash-dropdown-search-container {
+    background: #0e1b2c !important;
+    background-color: #0e1b2c !important;
+    border: 1px solid #334155 !important;
+    border-radius: 6px !important;
+    margin: 8px !important;
+    padding: 6px 10px !important;
+}
+
+.dash-dropdown-search-container:focus-within {
+    border-color: #22d3ee !important;
+    outline: 1px solid #22d3ee !important;
+}
+
+.dash-dropdown-search {
+    color: #f8fafc !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    font-size: 0.92rem !important;
+    caret-color: #22d3ee !important;
+    outline: none !important;
+    border: none !important;
+}
+
+/* Dash 4.5.1 Options List & Options */
+.dash-dropdown-options {
+    background: #172338 !important;
+    background-color: #172338 !important;
+}
+
+.dash-dropdown-option {
+    background: #172338 !important;
+    background-color: #172338 !important;
+    color: #f8fafc !important;
+    padding: 10px 14px !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 -1px 0 0 rgba(51, 65, 85, 0.4) inset !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.dash-dropdown-option:hover,
+.dash-dropdown-option:focus,
+.dash-dropdown-option:focus-within {
+    background: #164e63 !important;
+    background-color: #164e63 !important;
+    color: #ffffff !important;
+}
+
+.dash-dropdown-option:has(input:checked) {
+    background: #0e7490 !important;
+    background-color: #0e7490 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Dash 4.5.1 Action Buttons (Select all, Clear) */
+.dash-dropdown-actions {
+    background: #0e1b2c !important;
+    border-top: 1px solid #334155 !important;
+    border-bottom: 1px solid #334155 !important;
+    padding: 6px 12px !important;
+}
+
+.dash-dropdown-action-button {
+    color: #94a3b8 !important;
+}
+
+.dash-dropdown-action-button:hover {
+    color: #22d3ee !important;
+}
+
+/* Icons & Counts */
+.dash-dropdown-clear,
+.dash-dropdown-trigger-icon,
+.dash-dropdown-search-icon {
+    color: #94a3b8 !important;
+    fill: #94a3b8 !important;
+}
+
+.dash-dropdown-clear:hover,
+.dash-dropdown-trigger-icon:hover {
+    color: #22d3ee !important;
+    fill: #22d3ee !important;
+}
+
+.dash-dropdown-value-count {
+    background: #164e63 !important;
+    color: #22d3ee !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+}
+
+/* Outer trigger & input box (Fallback / Legacy support) */
+.drift-dropdown .Select-control,
+.Select-control,
+div[class*="-control"] {
+    background-color: #0e1b2c !important;
+    background: #0e1b2c !important;
     border: 1px solid #334155 !important;
     border-radius: var(--drift-radius-control) !important;
     min-height: 42px !important;
     box-shadow: none !important;
     color: #f8fafc !important;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .drift-dropdown .Select.is-focused > .Select-control,
-.drift-main .dash-dropdown.is-focused .dash-dropdown-trigger {
+.Select.is-focused > .Select-control,
+div[class*="-control"]:focus-within {
     border-color: #22d3ee !important;
     box-shadow: 0 0 0 1px #22d3ee !important;
 }
@@ -327,90 +481,172 @@ body {
 .drift-dropdown .Select-placeholder,
 .drift-dropdown .Select-value-label,
 .drift-dropdown .Select-value,
-.drift-main .dash-dropdown-trigger span {
+.Select-placeholder,
+.Select-value-label,
+.Select-value,
+div[class*="-placeholder"],
+div[class*="-singleValue"] {
     color: #f8fafc !important;
     font-size: 0.92rem;
-    line-height: 40px !important;
 }
 
-.drift-dropdown .Select-placeholder {
+.drift-dropdown .Select-placeholder,
+.Select-placeholder,
+div[class*="-placeholder"] {
     color: #64748b !important;
 }
 
 /* Search input text */
+.drift-dropdown .Select-input,
+.Select-input {
+    vertical-align: middle !important;
+}
+
 .drift-dropdown .Select-input input,
-.drift-main .dash-dropdown input {
+.Select-input input,
+.Select-input > input,
+div[class*="-Input"] input {
     color: #f8fafc !important;
     background: transparent !important;
+    background-color: transparent !important;
     font-size: 0.92rem;
-    line-height: 40px !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    caret-color: #22d3ee !important;
 }
 
 /* Dropdown arrow and clear button */
-.drift-dropdown .Select-arrow {
+.drift-dropdown .Select-arrow,
+.Select-arrow {
     border-top-color: #94a3b8 !important;
 }
 
-.drift-dropdown .Select-arrow-zone:hover > .Select-arrow {
+.drift-dropdown .Select-arrow-zone:hover > .Select-arrow,
+.Select-arrow-zone:hover > .Select-arrow {
     border-top-color: #22d3ee !important;
 }
 
-.drift-dropdown .Select-clear {
+.drift-dropdown .Select-clear,
+.Select-clear {
     color: #94a3b8 !important;
     font-size: 16px;
 }
 
-.drift-dropdown .Select-clear:hover {
+.drift-dropdown .Select-clear:hover,
+.Select-clear:hover {
     color: #f59e0b !important;
 }
 
 /* Menu Dropdown Popup */
-.drift-dropdown .Select-menu-outer,
-.drift-main .dash-dropdown .dash-dropdown-content {
+.Select-menu-outer,
+.Select-menu,
+div[class*="-menu"],
+div[class*="-MenuList"] {
     background-color: #172338 !important;
+    background: #172338 !important;
     border: 1px solid #334155 !important;
     border-radius: var(--drift-radius-control) !important;
     margin-top: 4px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45) !important;
     z-index: 1050 !important;
-    overflow: hidden !important;
+    overflow-y: auto !important;
 }
 
-.drift-dropdown .Select-menu {
-    background-color: #172338 !important;
+.Select-menu {
     max-height: 220px;
 }
 
 /* Options */
-.drift-dropdown .Select-option,
-.drift-dropdown .VirtualizedSelectOption,
-.drift-main .dash-dropdown .dash-dropdown-option {
+.Select-option,
+.VirtualizedSelectOption,
+div[class*="-option"] {
     background-color: #172338 !important;
+    background: #172338 !important;
     color: #f8fafc !important;
     padding: 10px 14px !important;
     font-size: 0.9rem !important;
     border-bottom: 1px solid rgba(51, 65, 85, 0.4) !important;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.drift-dropdown .Select-option.is-focused,
-.drift-dropdown .VirtualizedSelectFocusedOption,
-.drift-main .dash-dropdown .dash-dropdown-option:hover {
+.Select-option.is-focused,
+.Select-option:hover,
+.VirtualizedSelectFocusedOption,
+div[class*="-option"]:hover,
+div[class*="-option"][class*="-is-focused"] {
     background-color: #164e63 !important;
+    background: #164e63 !important;
     color: #ffffff !important;
 }
 
-.drift-dropdown .Select-option.is-selected {
+.Select-option.is-selected,
+div[class*="-option"][class*="-is-selected"] {
     background-color: #0e7490 !important;
+    background: #0e7490 !important;
     color: #ffffff !important;
     font-weight: 600;
 }
 
-.drift-dropdown .Select-noresults {
+.Select-option.is-selected.is-focused,
+div[class*="-option"][class*="-is-selected"][class*="-is-focused"] {
+    background-color: #0891b2 !important;
+    color: #ffffff !important;
+}
+
+.Select-noresults,
+div[class*="-NoOptionsMessage"] {
     background-color: #172338 !important;
     color: #94a3b8 !important;
-    padding: 12px;
+    padding: 14px;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+/* Presentation Mode: Suppress floating devtools icon if inadvertently injected */
+.dash-debug-menu,
+.dash-debug-menu__outer {
+    display: none !important;
+}
+
+/* Multi-select Dropdown Pills */
+.Select--multi .Select-value,
+.dash-dropdown-multi-value,
+div[class*="-MultiValueGeneric"],
+div[class*="-multiValue"] {
+    background-color: #164e63 !important;
+    border: 1px solid rgba(34, 211, 238, 0.4) !important;
+    color: #f8fafc !important;
+    border-radius: 6px !important;
+    margin: 3px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.Select--multi .Select-value-label,
+.dash-dropdown-multi-value-label,
+div[class*="-MultiValueGeneric"] span {
+    color: #f8fafc !important;
+    font-size: 0.82rem !important;
+    padding: 2px 8px !important;
+    line-height: 22px !important;
+}
+
+.Select--multi .Select-value-icon,
+.dash-dropdown-multi-value-remove,
+div[class*="-multiValue"] [class*="remove"] {
+    border-right: 1px solid rgba(34, 211, 238, 0.3) !important;
+    color: #94a3b8 !important;
+    padding: 2px 6px !important;
+    cursor: pointer !important;
+}
+
+.Select--multi .Select-value-icon:hover,
+.dash-dropdown-multi-value-remove:hover,
+div[class*="-multiValue"] [class*="remove"]:hover {
+    background-color: rgba(245, 158, 11, 0.25) !important;
+    color: #f59e0b !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -535,5 +771,169 @@ body {
 
     .drift-feature-card:hover {
         transform: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. Phase 2: DRIFT Intelligence & KPI Cards
+   -------------------------------------------------------------------------- */
+
+.drift-kpi-card {
+    border-top: 2px solid var(--drift-accent-cyan) !important;
+    background: linear-gradient(180deg, rgba(23, 35, 56, 0.98) 0%, rgba(14, 27, 44, 0.95) 100%) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drift-kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border-color: var(--drift-accent-cyan) !important;
+}
+
+.drift-kpi-val {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.drift-kpi-unit {
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.drift-kpi-icon {
+    font-size: 1.25rem;
+}
+
+/* Responsive grid padding for charts */
+.drift-card .js-plotly-plot,
+.drift-card .plot-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   11. Phase 2 Demo Mode & Source Selector
+   -------------------------------------------------------------------------- */
+
+.drift-source-bar {
+    background: #0e1b2c;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.drift-source-toggle .form-check {
+    margin-right: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.drift-source-toggle .form-check-input {
+    background-color: #0b1120;
+    border-color: #334155;
+    cursor: pointer;
+    width: 1.15em;
+    height: 1.15em;
+    margin-top: 0;
+}
+
+.drift-source-toggle .form-check-input:checked {
+    background-color: #22d3ee;
+    border-color: #22d3ee;
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+}
+
+.drift-source-toggle .form-check-label {
+    color: #f8fafc;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.drift-demo-banner {
+    background: rgba(245, 158, 11, 0.08) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(8px);
+}
+
+/* --------------------------------------------------------------------------
+   12. Milestone 4 Mobile SaaS, Fraud Guard & Touch Polish
+   -------------------------------------------------------------------------- */
+
+.drift-navbar {
+    background: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+}
+
+.drift-nav-link {
+    color: #94a3b8 !important;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border-radius: 6px;
+    padding: 6px 12px !important;
+}
+
+.drift-nav-link:hover,
+.drift-nav-link:focus {
+    color: #f8fafc !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.drift-btn-chip {
+    background-color: #172338 !important;
+    border: 1px solid #334155 !important;
+    color: #e2e8f0 !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    padding: 5px 12px !important;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.drift-btn-chip:hover {
+    border-color: #22d3ee !important;
+    color: #22d3ee !important;
+    background-color: #1e2e46 !important;
+    transform: translateY(-1px);
+}
+
+.drift-diagnostic-panel {
+    background: rgba(14, 27, 44, 0.7);
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+}
+
+.drift-diagnostic-li {
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+/* Ensure mobile form controls have font-size >= 16px to prevent iOS auto-zoom */
+@media (max-width: 768px) {
+    input, select, textarea, .form-control, .drift-form-control {
+        font-size: 16px !important;
+        min-height: 44px;
+    }
+
+    .drift-predict-btn,
+    .drift-btn-utility,
+    .drift-btn-outline {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }

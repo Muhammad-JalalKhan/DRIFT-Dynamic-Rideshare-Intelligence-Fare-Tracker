@@ -2,9 +2,9 @@
 DRIFT — Dynamic Rideshare Intelligence & Fare Tracker
 Rider Experience (DRIFT Ride) — Page Module
 
-Provides the interactive journey planner, Plotly NYC carto-dark map,
-trip detail selectors, dynamic map marker callbacks, and an
-integration-ready fare prediction status interface.
+Provides the interactive journey planner, Plotly NYC carto-dark map with route connectors,
+TLC 263-zone location selectors, airport quick-select chips, K-Means mobility archetype
+cluster badge, and integration-ready fare prediction status interface.
 """
 
 from datetime import date
@@ -12,9 +12,9 @@ from dash import html, dcc, callback, Input, Output, State, ctx
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 from services.prediction_service import fare_service
+from services.zone_service import zone_service
 
-# Temporary representative coordinates for NYC boroughs.
-# These are demonstration coordinates, not official NYC taxi-zone coordinates.
+# Temporary representative coordinates for NYC boroughs (retained for test compatibility)
 LOCATION_COORDINATES = {
     "manhattan": {
         "name": "Manhattan",
@@ -36,11 +36,16 @@ LOCATION_COORDINATES = {
     }
 }
 
-LOCATION_OPTIONS = [
+# 263 NYC TLC Zones combined with borough options for full backward compatibility
+BASE_BOROUGH_OPTIONS = [
     {"label": "Manhattan", "value": "manhattan"},
     {"label": "Brooklyn", "value": "brooklyn"},
     {"label": "Queens", "value": "queens"}
 ]
+
+# Build unified options: TLC Zones first, with legacy borough keys supported
+TLC_ZONE_OPTIONS = zone_service.get_dropdown_options()
+LOCATION_OPTIONS = TLC_ZONE_OPTIONS + BASE_BOROUGH_OPTIONS
 
 TIME_OPTIONS = [
     {"label": "08:00 AM — Morning Peak", "value": "08:00"},
@@ -56,22 +61,60 @@ PASSENGER_OPTIONS = [
 ]
 
 
+def resolve_coordinates(val):
+    """Resolves coordinates and display name from either LocationID int or borough string."""
+    if val is None:
+        return None
+
+    # Check integer or numeric string
+    try:
+        lid = int(val)
+        zone = zone_service.get_zone(lid)
+        if zone:
+            return {
+                "name": zone.get("Zone", f"Zone {lid}"),
+                "borough": zone.get("Borough", ""),
+                "lat": zone["lat"],
+                "lon": zone["lon"],
+                "is_airport": zone.get("is_airport", False)
+            }
+    except (ValueError, TypeError):
+        pass
+
+    # Check borough string
+    key = str(val).lower().strip()
+    if key in LOCATION_COORDINATES:
+        info = LOCATION_COORDINATES[key]
+        return {
+            "name": info["name"],
+            "borough": info["name"],
+            "lat": info["lat"],
+            "lon": info["lon"],
+            "is_airport": False
+        }
+
+    return None
+
+
 # ==========================================
 # Map Generation Function
 # ==========================================
 
-def create_nyc_map(pickup: str = None, dropoff: str = None):
+def create_nyc_map(pickup=None, dropoff=None, show_route: bool = False):
     """
     Renders an interactive Plotly map centered on New York City.
     Dynamically plots:
       - Cyan marker (#22D3EE) for Pickup Location
       - Amber marker (#F59E0B) for Destination Location
-    Handles identical locations cleanly without visual collision.
+      - Connecting route trajectory corridor when show_route is True
     """
     fig = go.Figure()
 
-    has_pickup = pickup in LOCATION_COORDINATES
-    has_dropoff = dropoff in LOCATION_COORDINATES
+    pu_info = resolve_coordinates(pickup)
+    do_info = resolve_coordinates(dropoff)
+
+    has_pickup = pu_info is not None
+    has_dropoff = do_info is not None
     is_same_location = has_pickup and has_dropoff and (pickup == dropoff)
 
     center_lat = 40.7306
@@ -96,95 +139,93 @@ def create_nyc_map(pickup: str = None, dropoff: str = None):
             )
         )
     elif is_same_location:
-        # Same location selected: plot distinct markers with slight visual separation
-        loc = LOCATION_COORDINATES[pickup]
-        center_lat = loc["lat"]
-        center_lon = loc["lon"]
-        zoom_level = 11.2
+        # Same location selected: slight visual offset
+        lat, lon = pu_info["lat"], pu_info["lon"]
+        name = pu_info["name"]
+        center_lat = lat
+        center_lon = lon
+        zoom_level = 11.5
 
         # Pickup marker (Cyan)
         fig.add_trace(
             go.Scattermap(
-                lat=[loc["lat"] - 0.0025],
-                lon=[loc["lon"] - 0.0025],
+                lat=[lat - 0.0025],
+                lon=[lon - 0.0025],
                 mode="markers+text",
-                marker={
-                    "size": 16,
-                    "color": "#22D3EE",
-                    "symbol": "circle"
-                },
+                marker={"size": 16, "color": "#22D3EE", "symbol": "circle"},
                 text=["PU"],
                 textposition="bottom center",
                 textfont={"color": "#22D3EE", "size": 11, "family": "Inter, sans-serif"},
                 name="Pickup Zone",
-                hovertemplate=f"<b>Pickup: {loc['name']}</b><br>Intra-borough trip<extra></extra>"
+                hovertemplate=f"<b>Pickup: {name}</b><br>Intra-zone trip<extra></extra>"
             )
         )
 
         # Destination marker (Amber)
         fig.add_trace(
             go.Scattermap(
-                lat=[loc["lat"] + 0.0025],
-                lon=[loc["lon"] + 0.0025],
+                lat=[lat + 0.0025],
+                lon=[lon + 0.0025],
                 mode="markers+text",
-                marker={
-                    "size": 16,
-                    "color": "#F59E0B",
-                    "symbol": "circle"
-                },
+                marker={"size": 16, "color": "#F59E0B", "symbol": "circle"},
                 text=["DO"],
                 textposition="top center",
                 textfont={"color": "#F59E0B", "size": 11, "family": "Inter, sans-serif"},
                 name="Destination Zone",
-                hovertemplate=f"<b>Destination: {loc['name']}</b><br>Intra-borough trip<extra></extra>"
+                hovertemplate=f"<b>Destination: {name}</b><br>Intra-zone trip<extra></extra>"
             )
         )
     else:
-        # Distinct locations
         lats = []
         lons = []
 
         if has_pickup:
-            loc_pu = LOCATION_COORDINATES[pickup]
-            lats.append(loc_pu["lat"])
-            lons.append(loc_pu["lon"])
+            lats.append(pu_info["lat"])
+            lons.append(pu_info["lon"])
+            prefix = "✈ " if pu_info["is_airport"] else ""
             fig.add_trace(
                 go.Scattermap(
-                    lat=[loc_pu["lat"]],
-                    lon=[loc_pu["lon"]],
+                    lat=[pu_info["lat"]],
+                    lon=[pu_info["lon"]],
                     mode="markers+text",
-                    marker={
-                        "size": 16,
-                        "color": "#22D3EE",
-                        "symbol": "circle"
-                    },
+                    marker={"size": 16, "color": "#22D3EE", "symbol": "circle"},
                     text=["Pickup"],
                     textposition="top center",
                     textfont={"color": "#22D3EE", "size": 11, "family": "Inter, sans-serif"},
                     name="Pickup",
-                    hovertemplate=f"<b>Pickup: {loc_pu['name']}</b><extra></extra>"
+                    hovertemplate=f"<b>Pickup: {prefix}{pu_info['name']}</b><extra></extra>"
                 )
             )
 
         if has_dropoff:
-            loc_do = LOCATION_COORDINATES[dropoff]
-            lats.append(loc_do["lat"])
-            lons.append(loc_do["lon"])
+            lats.append(do_info["lat"])
+            lons.append(do_info["lon"])
+            prefix = "✈ " if do_info["is_airport"] else ""
             fig.add_trace(
                 go.Scattermap(
-                    lat=[loc_do["lat"]],
-                    lon=[loc_do["lon"]],
+                    lat=[do_info["lat"]],
+                    lon=[do_info["lon"]],
                     mode="markers+text",
-                    marker={
-                        "size": 16,
-                        "color": "#F59E0B",
-                        "symbol": "circle"
-                    },
+                    marker={"size": 16, "color": "#F59E0B", "symbol": "circle"},
                     text=["Destination"],
                     textposition="top center",
                     textfont={"color": "#F59E0B", "size": 11, "family": "Inter, sans-serif"},
                     name="Destination",
-                    hovertemplate=f"<b>Destination: {loc_do['name']}</b><extra></extra>"
+                    hovertemplate=f"<b>Destination: {prefix}{do_info['name']}</b><extra></extra>"
+                )
+            )
+
+        # Optional connecting corridor line when both endpoints are distinct
+        if show_route and has_pickup and has_dropoff:
+            fig.add_trace(
+                go.Scattermap(
+                    lat=[pu_info["lat"], do_info["lat"]],
+                    lon=[pu_info["lon"], do_info["lon"]],
+                    mode="lines",
+                    line={"width": 2, "color": "#22D3EE"},
+                    opacity=0.6,
+                    hoverinfo="skip",
+                    showlegend=False
                 )
             )
 
@@ -200,10 +241,7 @@ def create_nyc_map(pickup: str = None, dropoff: str = None):
     fig.update_layout(
         map={
             "style": "carto-darkmatter",
-            "center": {
-                "lat": center_lat,
-                "lon": center_lon
-            },
+            "center": {"lat": center_lat, "lon": center_lon},
             "zoom": zoom_level
         },
         margin={"l": 0, "r": 0, "t": 0, "b": 0},
@@ -222,9 +260,7 @@ def create_nyc_map(pickup: str = None, dropoff: str = None):
 # ==========================================
 
 def ride_page():
-    # --------------------------------------
     # Header Section
-    # --------------------------------------
     header_section = dbc.Row(
         [
             dbc.Col(
@@ -250,10 +286,16 @@ def ride_page():
                 [
                     dcc.Link(
                         dbc.Button(
-                            [
-                                html.Span("←", className="me-2"),
-                                "Back to Portal"
-                            ],
+                            "🛡️ Fraud Guard",
+                            color="outline-info",
+                            size="sm",
+                            className="drift-btn-outline me-2"
+                        ),
+                        href="/fraud-guard"
+                    ),
+                    dcc.Link(
+                        dbc.Button(
+                            [html.Span("←", className="me-2"), "Back to Portal"],
                             color="outline-light",
                             size="sm",
                             className="drift-btn-outline"
@@ -269,17 +311,27 @@ def ride_page():
         className="mb-4 pb-2 border-bottom border-secondary border-opacity-25"
     )
 
-    # --------------------------------------
-    # Left Column: Journey Planner & Trip Details
-    # --------------------------------------
+    # Journey Planner Card
     journey_planner_card = dbc.Card(
         dbc.CardBody(
             [
                 html.Div(
                     [
                         html.H4("Journey Planner", className="mb-1 text-white"),
-                        html.P("Select zones to preview route on NYC network", className="drift-muted small mb-3")
+                        html.P("Select TLC zones or airports to preview route on NYC network", className="drift-muted small mb-3")
                     ]
+                ),
+
+                # Airport Quick-Select Chips
+                html.Div(
+                    [
+                        html.Span("Quick Airports:", className="drift-muted-subtle small me-2"),
+                        dbc.Button("JFK (132)", id="chip-jfk", size="sm", color="dark", className="drift-btn-chip me-1 mb-2"),
+                        dbc.Button("LGA (138)", id="chip-lga", size="sm", color="dark", className="drift-btn-chip me-1 mb-2"),
+                        dbc.Button("EWR (1)", id="chip-ewr", size="sm", color="dark", className="drift-btn-chip me-1 mb-2"),
+                        dbc.Button("Midtown (161)", id="chip-midtown", size="sm", color="dark", className="drift-btn-chip mb-2")
+                    ],
+                    className="d-flex flex-wrap align-items-center mb-3"
                 ),
 
                 # Pickup Dropdown
@@ -288,14 +340,14 @@ def ride_page():
                         html.Label(
                             [
                                 html.Span("●", style={"color": "#22D3EE"}, className="me-2"),
-                                "Pickup Location"
+                                "Pickup Location (263 TLC Zones)"
                             ],
                             className="drift-input-label"
                         ),
                         dcc.Dropdown(
                             id="pickup-location",
                             options=LOCATION_OPTIONS,
-                            placeholder="Select pickup borough...",
+                            placeholder="Search zone name, airport, or borough...",
                             clearable=True,
                             searchable=True,
                             className="drift-dropdown mb-3"
@@ -303,7 +355,7 @@ def ride_page():
                     ]
                 ),
 
-                # Quick swap button
+                # Quick swap and reset buttons
                 html.Div(
                     [
                         dbc.Button(
@@ -330,14 +382,14 @@ def ride_page():
                         html.Label(
                             [
                                 html.Span("●", style={"color": "#F59E0B"}, className="me-2"),
-                                "Destination Location"
+                                "Destination Location (263 TLC Zones)"
                             ],
                             className="drift-input-label"
                         ),
                         dcc.Dropdown(
                             id="dropoff-location",
                             options=LOCATION_OPTIONS,
-                            placeholder="Select destination borough...",
+                            placeholder="Search zone name, airport, or borough...",
                             clearable=True,
                             searchable=True,
                             className="drift-dropdown mb-3"
@@ -350,14 +402,11 @@ def ride_page():
 
                 html.Hr(className="border-secondary border-opacity-25 my-3"),
 
-                # Feature C: Trip Details
+                # Trip Details
                 html.Div(
                     [
                         html.H5("Trip Parameters", className="text-white mb-2"),
-                        html.P(
-                            "Model feature inputs (aligned with TLC pipeline)",
-                            className="drift-muted small mb-3"
-                        ),
+                        html.P("Model feature inputs (aligned with TLC pipeline)", className="drift-muted small mb-3"),
                         dbc.Row(
                             [
                                 dbc.Col(
@@ -418,9 +467,7 @@ def ride_page():
         className="drift-card mb-4"
     )
 
-    # --------------------------------------
-    # Left Column: Fare Estimation Interface
-    # --------------------------------------
+    # Fare Estimation Interface Card
     fare_prediction_card = dbc.Card(
         dbc.CardBody(
             [
@@ -457,9 +504,7 @@ def ride_page():
         className="drift-card mb-4"
     )
 
-    # --------------------------------------
-    # Right Column: Interactive NYC Map
-    # --------------------------------------
+    # Interactive NYC Map Card
     map_card = dbc.Card(
         dbc.CardBody(
             [
@@ -469,7 +514,7 @@ def ride_page():
                             [
                                 html.H4("NYC Mobility Network", className="text-white mb-0"),
                                 html.P(
-                                    "Centroid visualization of selected trip endpoints",
+                                    "Centroid visualization of selected TLC zones and travel corridors",
                                     className="drift-muted small mb-0"
                                 )
                             ]
@@ -504,13 +549,15 @@ def ride_page():
                                 html.Span(className="drift-legend-dot legend-pickup me-1"),
                                 html.Span("Pickup", className="drift-muted small me-3"),
                                 html.Span(className="drift-legend-dot legend-dropoff me-1"),
-                                html.Span("Destination", className="drift-muted small")
+                                html.Span("Destination", className="drift-muted small me-3"),
+                                html.Span("—", style={"color": "#22D3EE", "fontWeight": "bold"}, className="me-1"),
+                                html.Span("Corridor", className="drift-muted small")
                             ],
                             className="d-flex align-items-center"
                         ),
                         html.Div(
                             html.Span(
-                                "Demonstration coordinates. TLC Taxi Zone boundaries pending backend dataset.",
+                                "Official NYC TLC 263-Zone Centroids & Spatial Geometries (data/taxi_zones.geojson).",
                                 className="drift-muted-subtle small"
                             )
                         )
@@ -522,9 +569,7 @@ def ride_page():
         className="drift-card h-100"
     )
 
-    # --------------------------------------
     # Page Layout Assembly
-    # --------------------------------------
     return dbc.Container(
         [
             header_section,
@@ -558,22 +603,35 @@ def ride_page():
 # Dynamic Callbacks
 # ==========================================
 
-# 1. Swap & Reset Trip Locations Callback
+# 1. Swap, Reset & Airport Chips Callback
 @callback(
     Output("pickup-location", "value"),
     Output("dropoff-location", "value"),
     Input("swap-locations-btn", "n_clicks"),
     Input("reset-trip-btn", "n_clicks"),
+    Input("chip-jfk", "n_clicks"),
+    Input("chip-lga", "n_clicks"),
+    Input("chip-ewr", "n_clicks"),
+    Input("chip-midtown", "n_clicks"),
     State("pickup-location", "value"),
     State("dropoff-location", "value"),
     prevent_initial_call=True
 )
-def handle_trip_actions(swap_clicks, reset_clicks, current_pu, current_do):
+def handle_trip_actions(swap_clicks, reset_clicks, c_jfk, c_lga, c_ewr, c_mid, current_pu, current_do):
     triggered_id = ctx.triggered_id
     if triggered_id == "swap-locations-btn":
         return current_do, current_pu
     elif triggered_id == "reset-trip-btn":
         return None, None
+    elif triggered_id == "chip-jfk":
+        # If pickup is empty, set pickup; else set dropoff
+        return (132, current_do) if not current_pu else (current_pu, 132)
+    elif triggered_id == "chip-lga":
+        return (138, current_do) if not current_pu else (current_pu, 138)
+    elif triggered_id == "chip-ewr":
+        return (1, current_do) if not current_pu else (current_pu, 1)
+    elif triggered_id == "chip-midtown":
+        return (161, current_do) if not current_pu else (current_pu, 161)
     return current_pu, current_do
 
 
@@ -586,11 +644,13 @@ def handle_trip_actions(swap_clicks, reset_clicks, current_pu, current_do):
     Input("dropoff-location", "value")
 )
 def update_map(pickup, dropoff):
-    figure = create_nyc_map(pickup, dropoff)
+    figure = create_nyc_map(pickup, dropoff, show_route=True)
 
-    # Build status pill for map header
-    has_pu = pickup in LOCATION_COORDINATES
-    has_do = dropoff in LOCATION_COORDINATES
+    pu_info = resolve_coordinates(pickup)
+    do_info = resolve_coordinates(dropoff)
+
+    has_pu = pu_info is not None
+    has_do = do_info is not None
 
     if has_pu and has_do:
         pill = dbc.Badge("Both Zones Mapped", color="info", className="drift-badge-status")
@@ -601,15 +661,15 @@ def update_map(pickup, dropoff):
     else:
         pill = dbc.Badge("NYC Overview", color="secondary", className="drift-badge-status")
 
-    # Intra-borough alert if applicable
+    # Intra-borough / Intra-zone alert if applicable
     alert = None
     if has_pu and has_do and pickup == dropoff:
-        borough_name = LOCATION_COORDINATES[pickup]["name"]
+        zone_name = pu_info["name"]
         alert = dbc.Alert(
             [
                 html.Span("ℹ️ ", className="me-1"),
                 html.Strong("Intra-zone trip: "),
-                f"Both pickup and destination are in {borough_name}."
+                f"Both pickup and destination are in {zone_name}."
             ],
             color="info",
             className="drift-alert small py-2 px-3 mt-2 mb-0"
@@ -667,9 +727,12 @@ def handle_fare_intelligence(pickup, dropoff, trip_date, trip_time, passengers, 
         )
         return True, "Select Locations to Estimate", feedback
 
-    # Both locations selected: query the prediction service
-    pu_name = LOCATION_COORDINATES.get(pickup, {}).get("name", pickup.title())
-    do_name = LOCATION_COORDINATES.get(dropoff, {}).get("name", dropoff.title())
+    # Both locations selected: query prediction service
+    pu_info = resolve_coordinates(pickup)
+    do_info = resolve_coordinates(dropoff)
+    pu_name = pu_info["name"] if pu_info else str(pickup)
+    do_name = do_info["name"] if do_info else str(dropoff)
+
     res = fare_service.predict_fare(
         pickup_location=pickup,
         dropoff_location=dropoff,
@@ -678,15 +741,27 @@ def handle_fare_intelligence(pickup, dropoff, trip_date, trip_time, passengers, 
         passenger_count=passengers
     )
 
+    # Mobility cluster archetype badge
+    cluster_pill = None
+    if res.cluster_info:
+        c_name = res.cluster_info.get("cluster_name", "Urban Transit")
+        c_color = res.cluster_info.get("badge_color", "#06b6d4")
+        cluster_pill = html.Span(
+            f"● {c_name}",
+            style={"backgroundColor": "rgba(255,255,255,0.08)", "color": c_color, "border": f"1px solid {c_color}"},
+            className="badge px-2 py-1 me-2"
+        )
+
     if res.is_available and res.predicted_fare is not None:
-        # ML Model Active branch (milestone 2)
+        # ML Model Active branch
         fare_display = html.Div(
             [
                 html.Div(
                     [
                         html.Span("$", className="drift-fare-symbol"),
                         html.Span(f"{res.predicted_fare:.2f}", className="drift-fare-value"),
-                        html.Span("USD", className="drift-fare-currency ms-2")
+                        html.Span("USD", className="drift-fare-currency ms-2"),
+                        html.Div(cluster_pill, className="ms-auto") if cluster_pill else None
                     ],
                     className="d-flex align-items-baseline mb-2"
                 ),
@@ -697,12 +772,29 @@ def handle_fare_intelligence(pickup, dropoff, trip_date, trip_time, passengers, 
         btn_label = "Update Estimate"
     else:
         # Awaiting ML Integration branch (honest and transparent)
+        baseline_quote_line = None
+        if res.baseline_estimate:
+            baseline_quote_line = html.Div(
+                [
+                    html.Span("TLC Reference Tariff: ", className="drift-muted small"),
+                    html.Strong(f"~${res.baseline_estimate:.2f} USD", className="text-light small me-2"),
+                    html.Span(f"({res.fare_range[0]:.2f} – ${res.fare_range[1]:.2f} range)", className="drift-muted-subtle small")
+                ],
+                className="mt-2 pt-2 border-top border-secondary border-opacity-10"
+            )
+
         fare_display = html.Div(
             [
-                dbc.Badge(
-                    "Model Awaiting Integration",
-                    color="warning",
-                    className="drift-badge-warning mb-2 py-1 px-2"
+                html.Div(
+                    [
+                        dbc.Badge(
+                            "Model Awaiting Integration",
+                            color="warning",
+                            className="drift-badge-warning py-1 px-2 me-2"
+                        ),
+                        cluster_pill if cluster_pill else None
+                    ],
+                    className="d-flex align-items-center mb-2"
                 ),
                 html.H5("Prediction Engine Pending", className="text-white mb-2"),
                 html.P(
@@ -718,19 +810,21 @@ def handle_fare_intelligence(pickup, dropoff, trip_date, trip_time, passengers, 
                         )
                     ],
                     className="drift-contract-box p-2 rounded"
-                )
+                ),
+                baseline_quote_line
             ],
             className="drift-fare-box-pending p-3 rounded mb-2"
         )
         btn_label = "Model Integration Pending"
 
     # Trip Summary Strip
+    dist_text = f" (~{res.features_used.get('trip_distance_miles', 4.2):.1f} mi)" if res.features_used else ""
     summary_strip = html.Div(
         [
             html.Div(
                 [
                     html.Span("Route: ", className="drift-muted small"),
-                    html.Strong(f"{pu_name} → {do_name}", className="text-white small")
+                    html.Strong(f"{pu_name} → {do_name}{dist_text}", className="text-white small")
                 ],
                 className="mb-1"
             ),
@@ -747,6 +841,5 @@ def handle_fare_intelligence(pickup, dropoff, trip_date, trip_time, passengers, 
     )
 
     full_output = html.Div([summary_strip, fare_display])
-    # Button is active if model is ready, or disabled in pending state
     button_disabled = not fare_service.is_model_ready()
     return button_disabled, btn_label, full_output
