@@ -9,6 +9,7 @@ __pycache__/
 # Large datasets
 *.parquet
 *.csv
+!03_product_ui_monis/tests/fixtures/synthetic_trips.csv
 
 # Environment variables and credentials
 .env
