@@ -1,0 +1,54 @@
+﻿name: DRIFT CI - Quality & Integration Gate
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+  push:
+    branches: [ main ]
+
+jobs:
+  qa-and-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: 2. Guardrail - Block Large Files (>15 MB)
+        run: |
+          LARGE_FILES=$(find . -not -path '*/.*' -type f -size +15M)
+          if [ -n "$LARGE_FILES" ]; then
+            echo "ERROR: Large files (>15MB) detected. Keep large datasets on Google Drive:"
+            echo "$LARGE_FILES"
+            exit 1
+          fi
+
+      - name: 3. Set Up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 4. Install Pinned Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 5. Verify Serialized ML Models Load Cleanly
+        run: |
+          python -c "
+          import glob, joblib
+          pkl_files = glob.glob('02_ml_modeling_anoushey/saved_models/*.pkl')
+          print(f'Found {len(pkl_files)} model bundles:', pkl_files)
+          for f in pkl_files:
+              obj = joblib.load(f)
+              print('Loaded successfully:', f, type(obj))
+          "
+
+      - name: 6. Run Product UI Automated Unit Tests
+        run: |
+          if [ -d "03_product_ui_monis" ]; then
+            python -m unittest discover -s 03_product_ui_monis -p "test*.py" -v
+          else
+            echo "UI folder not merged yet - skipping UI tests."
+          fi
