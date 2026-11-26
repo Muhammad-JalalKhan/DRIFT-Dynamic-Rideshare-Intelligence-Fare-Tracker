@@ -1,0 +1,2369 @@
+[
+  {
+    "LocationID": 3,
+    "Borough": "Bronx",
+    "Zone": "Allerton/Pelham Gardens",
+    "service_zone": "Boro Zone",
+    "lat": 40.86447,
+    "lon": -73.84742,
+    "is_airport": false
+  },
+  {
+    "LocationID": 18,
+    "Borough": "Bronx",
+    "Zone": "Bedford Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.86768,
+    "lon": -73.89018,
+    "is_airport": false
+  },
+  {
+    "LocationID": 20,
+    "Borough": "Bronx",
+    "Zone": "Belmont",
+    "service_zone": "Boro Zone",
+    "lat": 40.85778,
+    "lon": -73.88587,
+    "is_airport": false
+  },
+  {
+    "LocationID": 31,
+    "Borough": "Bronx",
+    "Zone": "Bronx Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.85775,
+    "lon": -73.87548,
+    "is_airport": false
+  },
+  {
+    "LocationID": 32,
+    "Borough": "Bronx",
+    "Zone": "Bronxdale",
+    "service_zone": "Boro Zone",
+    "lat": 40.864,
+    "lon": -73.8649,
+    "is_airport": false
+  },
+  {
+    "LocationID": 46,
+    "Borough": "Bronx",
+    "Zone": "City Island",
+    "service_zone": "Boro Zone",
+    "lat": 40.84909,
+    "lon": -73.78199,
+    "is_airport": false
+  },
+  {
+    "LocationID": 47,
+    "Borough": "Bronx",
+    "Zone": "Claremont/Bathgate",
+    "service_zone": "Boro Zone",
+    "lat": 40.84275,
+    "lon": -73.90032,
+    "is_airport": false
+  },
+  {
+    "LocationID": 51,
+    "Borough": "Bronx",
+    "Zone": "Co-Op City",
+    "service_zone": "Boro Zone",
+    "lat": 40.87397,
+    "lon": -73.82826,
+    "is_airport": false
+  },
+  {
+    "LocationID": 58,
+    "Borough": "Bronx",
+    "Zone": "Country Club",
+    "service_zone": "Boro Zone",
+    "lat": 40.84145,
+    "lon": -73.82039,
+    "is_airport": false
+  },
+  {
+    "LocationID": 59,
+    "Borough": "Bronx",
+    "Zone": "Crotona Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.83855,
+    "lon": -73.89499,
+    "is_airport": false
+  },
+  {
+    "LocationID": 60,
+    "Borough": "Bronx",
+    "Zone": "Crotona Park East",
+    "service_zone": "Boro Zone",
+    "lat": 40.83399,
+    "lon": -73.8859,
+    "is_airport": false
+  },
+  {
+    "LocationID": 69,
+    "Borough": "Bronx",
+    "Zone": "East Concourse/Concourse Village",
+    "service_zone": "Boro Zone",
+    "lat": 40.83142,
+    "lon": -73.91503,
+    "is_airport": false
+  },
+  {
+    "LocationID": 78,
+    "Borough": "Bronx",
+    "Zone": "East Tremont",
+    "service_zone": "Boro Zone",
+    "lat": 40.84496,
+    "lon": -73.88552,
+    "is_airport": false
+  },
+  {
+    "LocationID": 81,
+    "Borough": "Bronx",
+    "Zone": "Eastchester",
+    "service_zone": "Boro Zone",
+    "lat": 40.88094,
+    "lon": -73.83664,
+    "is_airport": false
+  },
+  {
+    "LocationID": 94,
+    "Borough": "Bronx",
+    "Zone": "Fordham South",
+    "service_zone": "Boro Zone",
+    "lat": 40.85816,
+    "lon": -73.89954,
+    "is_airport": false
+  },
+  {
+    "LocationID": 119,
+    "Borough": "Bronx",
+    "Zone": "Highbridge",
+    "service_zone": "Boro Zone",
+    "lat": 40.83783,
+    "lon": -73.92616,
+    "is_airport": false
+  },
+  {
+    "LocationID": 126,
+    "Borough": "Bronx",
+    "Zone": "Hunts Point",
+    "service_zone": "Boro Zone",
+    "lat": 40.81207,
+    "lon": -73.88554,
+    "is_airport": false
+  },
+  {
+    "LocationID": 136,
+    "Borough": "Bronx",
+    "Zone": "Kingsbridge Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.86526,
+    "lon": -73.90591,
+    "is_airport": false
+  },
+  {
+    "LocationID": 147,
+    "Borough": "Bronx",
+    "Zone": "Longwood",
+    "service_zone": "Boro Zone",
+    "lat": 40.81968,
+    "lon": -73.89896,
+    "is_airport": false
+  },
+  {
+    "LocationID": 159,
+    "Borough": "Bronx",
+    "Zone": "Melrose South",
+    "service_zone": "Boro Zone",
+    "lat": 40.81826,
+    "lon": -73.91285,
+    "is_airport": false
+  },
+  {
+    "LocationID": 167,
+    "Borough": "Bronx",
+    "Zone": "Morrisania/Melrose",
+    "service_zone": "Boro Zone",
+    "lat": 40.82751,
+    "lon": -73.90235,
+    "is_airport": false
+  },
+  {
+    "LocationID": 168,
+    "Borough": "Bronx",
+    "Zone": "Mott Haven/Port Morris",
+    "service_zone": "Boro Zone",
+    "lat": 40.80735,
+    "lon": -73.91682,
+    "is_airport": false
+  },
+  {
+    "LocationID": 169,
+    "Borough": "Bronx",
+    "Zone": "Mount Hope",
+    "service_zone": "Boro Zone",
+    "lat": 40.84906,
+    "lon": -73.90512,
+    "is_airport": false
+  },
+  {
+    "LocationID": 174,
+    "Borough": "Bronx",
+    "Zone": "Norwood",
+    "service_zone": "Boro Zone",
+    "lat": 40.87714,
+    "lon": -73.87902,
+    "is_airport": false
+  },
+  {
+    "LocationID": 182,
+    "Borough": "Bronx",
+    "Zone": "Parkchester",
+    "service_zone": "Boro Zone",
+    "lat": 40.83775,
+    "lon": -73.85799,
+    "is_airport": false
+  },
+  {
+    "LocationID": 183,
+    "Borough": "Bronx",
+    "Zone": "Pelham Bay",
+    "service_zone": "Boro Zone",
+    "lat": 40.84917,
+    "lon": -73.83158,
+    "is_airport": false
+  },
+  {
+    "LocationID": 184,
+    "Borough": "Bronx",
+    "Zone": "Pelham Bay Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.86828,
+    "lon": -73.80786,
+    "is_airport": false
+  },
+  {
+    "LocationID": 185,
+    "Borough": "Bronx",
+    "Zone": "Pelham Parkway",
+    "service_zone": "Boro Zone",
+    "lat": 40.8544,
+    "lon": -73.85439,
+    "is_airport": false
+  },
+  {
+    "LocationID": 199,
+    "Borough": "Bronx",
+    "Zone": "Rikers Island",
+    "service_zone": "Boro Zone",
+    "lat": 40.79113,
+    "lon": -73.88266,
+    "is_airport": false
+  },
+  {
+    "LocationID": 200,
+    "Borough": "Bronx",
+    "Zone": "Riverdale/North Riverdale/Fieldston",
+    "service_zone": "Boro Zone",
+    "lat": 40.89953,
+    "lon": -73.90699,
+    "is_airport": false
+  },
+  {
+    "LocationID": 208,
+    "Borough": "Bronx",
+    "Zone": "Schuylerville/Edgewater Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.82332,
+    "lon": -73.82354,
+    "is_airport": false
+  },
+  {
+    "LocationID": 212,
+    "Borough": "Bronx",
+    "Zone": "Soundview/Bruckner",
+    "service_zone": "Boro Zone",
+    "lat": 40.8279,
+    "lon": -73.86968,
+    "is_airport": false
+  },
+  {
+    "LocationID": 213,
+    "Borough": "Bronx",
+    "Zone": "Soundview/Castle Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.81786,
+    "lon": -73.85814,
+    "is_airport": false
+  },
+  {
+    "LocationID": 220,
+    "Borough": "Bronx",
+    "Zone": "Spuyten Duyvil/Kingsbridge",
+    "service_zone": "Boro Zone",
+    "lat": 40.8824,
+    "lon": -73.91066,
+    "is_airport": false
+  },
+  {
+    "LocationID": 235,
+    "Borough": "Bronx",
+    "Zone": "University Heights/Morris Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.85252,
+    "lon": -73.91598,
+    "is_airport": false
+  },
+  {
+    "LocationID": 240,
+    "Borough": "Bronx",
+    "Zone": "Van Cortlandt Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.8946,
+    "lon": -73.88198,
+    "is_airport": false
+  },
+  {
+    "LocationID": 241,
+    "Borough": "Bronx",
+    "Zone": "Van Cortlandt Village",
+    "service_zone": "Boro Zone",
+    "lat": 40.87651,
+    "lon": -73.89562,
+    "is_airport": false
+  },
+  {
+    "LocationID": 242,
+    "Borough": "Bronx",
+    "Zone": "Van Nest/Morris Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.84678,
+    "lon": -73.85067,
+    "is_airport": false
+  },
+  {
+    "LocationID": 247,
+    "Borough": "Bronx",
+    "Zone": "West Concourse",
+    "service_zone": "Boro Zone",
+    "lat": 40.82899,
+    "lon": -73.92441,
+    "is_airport": false
+  },
+  {
+    "LocationID": 248,
+    "Borough": "Bronx",
+    "Zone": "West Farms/Bronx River",
+    "service_zone": "Boro Zone",
+    "lat": 40.83417,
+    "lon": -73.87229,
+    "is_airport": false
+  },
+  {
+    "LocationID": 250,
+    "Borough": "Bronx",
+    "Zone": "Westchester Village/Unionport",
+    "service_zone": "Boro Zone",
+    "lat": 40.8321,
+    "lon": -73.84864,
+    "is_airport": false
+  },
+  {
+    "LocationID": 254,
+    "Borough": "Bronx",
+    "Zone": "Williamsbridge/Olinville",
+    "service_zone": "Boro Zone",
+    "lat": 40.88216,
+    "lon": -73.85895,
+    "is_airport": false
+  },
+  {
+    "LocationID": 259,
+    "Borough": "Bronx",
+    "Zone": "Woodlawn/Wakefield",
+    "service_zone": "Boro Zone",
+    "lat": 40.89793,
+    "lon": -73.85222,
+    "is_airport": false
+  },
+  {
+    "LocationID": 11,
+    "Borough": "Brooklyn",
+    "Zone": "Bath Beach",
+    "service_zone": "Boro Zone",
+    "lat": 40.60427,
+    "lon": -74.00749,
+    "is_airport": false
+  },
+  {
+    "LocationID": 14,
+    "Borough": "Brooklyn",
+    "Zone": "Bay Ridge",
+    "service_zone": "Boro Zone",
+    "lat": 40.62483,
+    "lon": -74.02989,
+    "is_airport": false
+  },
+  {
+    "LocationID": 17,
+    "Borough": "Brooklyn",
+    "Zone": "Bedford",
+    "service_zone": "Boro Zone",
+    "lat": 40.69151,
+    "lon": -73.9499,
+    "is_airport": false
+  },
+  {
+    "LocationID": 21,
+    "Borough": "Brooklyn",
+    "Zone": "Bensonhurst East",
+    "service_zone": "Boro Zone",
+    "lat": 40.60143,
+    "lon": -73.98354,
+    "is_airport": false
+  },
+  {
+    "LocationID": 22,
+    "Borough": "Brooklyn",
+    "Zone": "Bensonhurst West",
+    "service_zone": "Boro Zone",
+    "lat": 40.61222,
+    "lon": -73.99526,
+    "is_airport": false
+  },
+  {
+    "LocationID": 25,
+    "Borough": "Brooklyn",
+    "Zone": "Boerum Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.68563,
+    "lon": -73.98611,
+    "is_airport": false
+  },
+  {
+    "LocationID": 26,
+    "Borough": "Brooklyn",
+    "Zone": "Borough Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.63095,
+    "lon": -73.98866,
+    "is_airport": false
+  },
+  {
+    "LocationID": 29,
+    "Borough": "Brooklyn",
+    "Zone": "Brighton Beach",
+    "service_zone": "Boro Zone",
+    "lat": 40.58092,
+    "lon": -73.96122,
+    "is_airport": false
+  },
+  {
+    "LocationID": 33,
+    "Borough": "Brooklyn",
+    "Zone": "Brooklyn Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.6958,
+    "lon": -73.99525,
+    "is_airport": false
+  },
+  {
+    "LocationID": 34,
+    "Borough": "Brooklyn",
+    "Zone": "Brooklyn Navy Yard",
+    "service_zone": "Boro Zone",
+    "lat": 40.70086,
+    "lon": -73.97119,
+    "is_airport": false
+  },
+  {
+    "LocationID": 35,
+    "Borough": "Brooklyn",
+    "Zone": "Brownsville",
+    "service_zone": "Boro Zone",
+    "lat": 40.664,
+    "lon": -73.91026,
+    "is_airport": false
+  },
+  {
+    "LocationID": 36,
+    "Borough": "Brooklyn",
+    "Zone": "Bushwick North",
+    "service_zone": "Boro Zone",
+    "lat": 40.70052,
+    "lon": -73.91771,
+    "is_airport": false
+  },
+  {
+    "LocationID": 37,
+    "Borough": "Brooklyn",
+    "Zone": "Bushwick South",
+    "service_zone": "Boro Zone",
+    "lat": 40.69499,
+    "lon": -73.92224,
+    "is_airport": false
+  },
+  {
+    "LocationID": 39,
+    "Borough": "Brooklyn",
+    "Zone": "Canarsie",
+    "service_zone": "Boro Zone",
+    "lat": 40.63804,
+    "lon": -73.89973,
+    "is_airport": false
+  },
+  {
+    "LocationID": 40,
+    "Borough": "Brooklyn",
+    "Zone": "Carroll Gardens",
+    "service_zone": "Boro Zone",
+    "lat": 40.6792,
+    "lon": -73.99596,
+    "is_airport": false
+  },
+  {
+    "LocationID": 49,
+    "Borough": "Brooklyn",
+    "Zone": "Clinton Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.68797,
+    "lon": -73.96236,
+    "is_airport": false
+  },
+  {
+    "LocationID": 52,
+    "Borough": "Brooklyn",
+    "Zone": "Cobble Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.68665,
+    "lon": -73.99672,
+    "is_airport": false
+  },
+  {
+    "LocationID": 54,
+    "Borough": "Brooklyn",
+    "Zone": "Columbia Street",
+    "service_zone": "Boro Zone",
+    "lat": 40.6872,
+    "lon": -74.00291,
+    "is_airport": false
+  },
+  {
+    "LocationID": 55,
+    "Borough": "Brooklyn",
+    "Zone": "Coney Island",
+    "service_zone": "Boro Zone",
+    "lat": 40.57696,
+    "lon": -73.98794,
+    "is_airport": false
+  },
+  {
+    "LocationID": 61,
+    "Borough": "Brooklyn",
+    "Zone": "Crown Heights North",
+    "service_zone": "Boro Zone",
+    "lat": 40.67447,
+    "lon": -73.93929,
+    "is_airport": false
+  },
+  {
+    "LocationID": 62,
+    "Borough": "Brooklyn",
+    "Zone": "Crown Heights South",
+    "service_zone": "Boro Zone",
+    "lat": 40.66654,
+    "lon": -73.94879,
+    "is_airport": false
+  },
+  {
+    "LocationID": 63,
+    "Borough": "Brooklyn",
+    "Zone": "Cypress Hills",
+    "service_zone": "Boro Zone",
+    "lat": 40.68384,
+    "lon": -73.87817,
+    "is_airport": false
+  },
+  {
+    "LocationID": 66,
+    "Borough": "Brooklyn",
+    "Zone": "DUMBO/Vinegar Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.70226,
+    "lon": -73.9857,
+    "is_airport": false
+  },
+  {
+    "LocationID": 65,
+    "Borough": "Brooklyn",
+    "Zone": "Downtown Brooklyn/MetroTech",
+    "service_zone": "Boro Zone",
+    "lat": 40.69534,
+    "lon": -73.98609,
+    "is_airport": false
+  },
+  {
+    "LocationID": 67,
+    "Borough": "Brooklyn",
+    "Zone": "Dyker Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.61962,
+    "lon": -74.0138,
+    "is_airport": false
+  },
+  {
+    "LocationID": 71,
+    "Borough": "Brooklyn",
+    "Zone": "East Flatbush/Farragut",
+    "service_zone": "Boro Zone",
+    "lat": 40.64429,
+    "lon": -73.93797,
+    "is_airport": false
+  },
+  {
+    "LocationID": 72,
+    "Borough": "Brooklyn",
+    "Zone": "East Flatbush/Remsen Village",
+    "service_zone": "Boro Zone",
+    "lat": 40.65236,
+    "lon": -73.92225,
+    "is_airport": false
+  },
+  {
+    "LocationID": 76,
+    "Borough": "Brooklyn",
+    "Zone": "East New York",
+    "service_zone": "Boro Zone",
+    "lat": 40.66094,
+    "lon": -73.87682,
+    "is_airport": false
+  },
+  {
+    "LocationID": 77,
+    "Borough": "Brooklyn",
+    "Zone": "East New York/Pennsylvania Avenue",
+    "service_zone": "Boro Zone",
+    "lat": 40.66656,
+    "lon": -73.89536,
+    "is_airport": false
+  },
+  {
+    "LocationID": 80,
+    "Borough": "Brooklyn",
+    "Zone": "East Williamsburg",
+    "service_zone": "Boro Zone",
+    "lat": 40.71537,
+    "lon": -73.93679,
+    "is_airport": false
+  },
+  {
+    "LocationID": 85,
+    "Borough": "Brooklyn",
+    "Zone": "Erasmus",
+    "service_zone": "Boro Zone",
+    "lat": 40.64612,
+    "lon": -73.95162,
+    "is_airport": false
+  },
+  {
+    "LocationID": 89,
+    "Borough": "Brooklyn",
+    "Zone": "Flatbush/Ditmas Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.6379,
+    "lon": -73.96097,
+    "is_airport": false
+  },
+  {
+    "LocationID": 91,
+    "Borough": "Brooklyn",
+    "Zone": "Flatlands",
+    "service_zone": "Boro Zone",
+    "lat": 40.62627,
+    "lon": -73.9301,
+    "is_airport": false
+  },
+  {
+    "LocationID": 97,
+    "Borough": "Brooklyn",
+    "Zone": "Fort Greene",
+    "service_zone": "Boro Zone",
+    "lat": 40.69079,
+    "lon": -73.97488,
+    "is_airport": false
+  },
+  {
+    "LocationID": 106,
+    "Borough": "Brooklyn",
+    "Zone": "Gowanus",
+    "service_zone": "Boro Zone",
+    "lat": 40.67351,
+    "lon": -73.99065,
+    "is_airport": false
+  },
+  {
+    "LocationID": 108,
+    "Borough": "Brooklyn",
+    "Zone": "Gravesend",
+    "service_zone": "Boro Zone",
+    "lat": 40.5884,
+    "lon": -73.98143,
+    "is_airport": false
+  },
+  {
+    "LocationID": 111,
+    "Borough": "Brooklyn",
+    "Zone": "Green-Wood Cemetery",
+    "service_zone": "Boro Zone",
+    "lat": 40.65214,
+    "lon": -73.99023,
+    "is_airport": false
+  },
+  {
+    "LocationID": 112,
+    "Borough": "Brooklyn",
+    "Zone": "Greenpoint",
+    "service_zone": "Boro Zone",
+    "lat": 40.72951,
+    "lon": -73.94954,
+    "is_airport": false
+  },
+  {
+    "LocationID": 123,
+    "Borough": "Brooklyn",
+    "Zone": "Homecrest",
+    "service_zone": "Boro Zone",
+    "lat": 40.59995,
+    "lon": -73.96433,
+    "is_airport": false
+  },
+  {
+    "LocationID": 133,
+    "Borough": "Brooklyn",
+    "Zone": "Kensington",
+    "service_zone": "Boro Zone",
+    "lat": 40.64059,
+    "lon": -73.9762,
+    "is_airport": false
+  },
+  {
+    "LocationID": 149,
+    "Borough": "Brooklyn",
+    "Zone": "Madison",
+    "service_zone": "Boro Zone",
+    "lat": 40.60491,
+    "lon": -73.94814,
+    "is_airport": false
+  },
+  {
+    "LocationID": 150,
+    "Borough": "Brooklyn",
+    "Zone": "Manhattan Beach",
+    "service_zone": "Boro Zone",
+    "lat": 40.58047,
+    "lon": -73.94363,
+    "is_airport": false
+  },
+  {
+    "LocationID": 154,
+    "Borough": "Brooklyn",
+    "Zone": "Marine Park/Floyd Bennett Field",
+    "service_zone": "Boro Zone",
+    "lat": 40.59357,
+    "lon": -73.9026,
+    "is_airport": false
+  },
+  {
+    "LocationID": 155,
+    "Borough": "Brooklyn",
+    "Zone": "Marine Park/Mill Basin",
+    "service_zone": "Boro Zone",
+    "lat": 40.61459,
+    "lon": -73.91528,
+    "is_airport": false
+  },
+  {
+    "LocationID": 165,
+    "Borough": "Brooklyn",
+    "Zone": "Midwood",
+    "service_zone": "Boro Zone",
+    "lat": 40.62092,
+    "lon": -73.95682,
+    "is_airport": false
+  },
+  {
+    "LocationID": 177,
+    "Borough": "Brooklyn",
+    "Zone": "Ocean Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.67664,
+    "lon": -73.91363,
+    "is_airport": false
+  },
+  {
+    "LocationID": 178,
+    "Borough": "Brooklyn",
+    "Zone": "Ocean Parkway South",
+    "service_zone": "Boro Zone",
+    "lat": 40.61731,
+    "lon": -73.97033,
+    "is_airport": false
+  },
+  {
+    "LocationID": 181,
+    "Borough": "Brooklyn",
+    "Zone": "Park Slope",
+    "service_zone": "Boro Zone",
+    "lat": 40.67037,
+    "lon": -73.98141,
+    "is_airport": false
+  },
+  {
+    "LocationID": 189,
+    "Borough": "Brooklyn",
+    "Zone": "Prospect Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.67764,
+    "lon": -73.96759,
+    "is_airport": false
+  },
+  {
+    "LocationID": 190,
+    "Borough": "Brooklyn",
+    "Zone": "Prospect Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.66162,
+    "lon": -73.96891,
+    "is_airport": false
+  },
+  {
+    "LocationID": 188,
+    "Borough": "Brooklyn",
+    "Zone": "Prospect-Lefferts Gardens",
+    "service_zone": "Boro Zone",
+    "lat": 40.65874,
+    "lon": -73.94744,
+    "is_airport": false
+  },
+  {
+    "LocationID": 195,
+    "Borough": "Brooklyn",
+    "Zone": "Red Hook",
+    "service_zone": "Boro Zone",
+    "lat": 40.67555,
+    "lon": -74.00918,
+    "is_airport": false
+  },
+  {
+    "LocationID": 210,
+    "Borough": "Brooklyn",
+    "Zone": "Sheepshead Bay",
+    "service_zone": "Boro Zone",
+    "lat": 40.59202,
+    "lon": -73.94051,
+    "is_airport": false
+  },
+  {
+    "LocationID": 217,
+    "Borough": "Brooklyn",
+    "Zone": "South Williamsburg",
+    "service_zone": "Boro Zone",
+    "lat": 40.70392,
+    "lon": -73.9586,
+    "is_airport": false
+  },
+  {
+    "LocationID": 222,
+    "Borough": "Brooklyn",
+    "Zone": "Starrett City",
+    "service_zone": "Boro Zone",
+    "lat": 40.64753,
+    "lon": -73.88241,
+    "is_airport": false
+  },
+  {
+    "LocationID": 225,
+    "Borough": "Brooklyn",
+    "Zone": "Stuyvesant Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.68817,
+    "lon": -73.93189,
+    "is_airport": false
+  },
+  {
+    "LocationID": 227,
+    "Borough": "Brooklyn",
+    "Zone": "Sunset Park East",
+    "service_zone": "Boro Zone",
+    "lat": 40.64189,
+    "lon": -74.00465,
+    "is_airport": false
+  },
+  {
+    "LocationID": 228,
+    "Borough": "Brooklyn",
+    "Zone": "Sunset Park West",
+    "service_zone": "Boro Zone",
+    "lat": 40.65235,
+    "lon": -74.01127,
+    "is_airport": false
+  },
+  {
+    "LocationID": 255,
+    "Borough": "Brooklyn",
+    "Zone": "Williamsburg (North Side)",
+    "service_zone": "Boro Zone",
+    "lat": 40.7188,
+    "lon": -73.95742,
+    "is_airport": false
+  },
+  {
+    "LocationID": 256,
+    "Borough": "Brooklyn",
+    "Zone": "Williamsburg (South Side)",
+    "service_zone": "Boro Zone",
+    "lat": 40.71088,
+    "lon": -73.9599,
+    "is_airport": false
+  },
+  {
+    "LocationID": 257,
+    "Borough": "Brooklyn",
+    "Zone": "Windsor Terrace",
+    "service_zone": "Boro Zone",
+    "lat": 40.65361,
+    "lon": -73.97798,
+    "is_airport": false
+  },
+  {
+    "LocationID": 1,
+    "Borough": "EWR",
+    "Zone": "Newark Airport",
+    "service_zone": "EWR",
+    "lat": 40.69183,
+    "lon": -74.174,
+    "is_airport": true
+  },
+  {
+    "LocationID": 4,
+    "Borough": "Manhattan",
+    "Zone": "Alphabet City",
+    "service_zone": "Yellow Zone",
+    "lat": 40.72375,
+    "lon": -73.97697,
+    "is_airport": false
+  },
+  {
+    "LocationID": 12,
+    "Borough": "Manhattan",
+    "Zone": "Battery Park",
+    "service_zone": "Yellow Zone",
+    "lat": 40.70295,
+    "lon": -74.01556,
+    "is_airport": false
+  },
+  {
+    "LocationID": 13,
+    "Borough": "Manhattan",
+    "Zone": "Battery Park City",
+    "service_zone": "Yellow Zone",
+    "lat": 40.71204,
+    "lon": -74.01608,
+    "is_airport": false
+  },
+  {
+    "LocationID": 24,
+    "Borough": "Manhattan",
+    "Zone": "Bloomingdale",
+    "service_zone": "Yellow Zone",
+    "lat": 40.80197,
+    "lon": -73.96548,
+    "is_airport": false
+  },
+  {
+    "LocationID": 41,
+    "Borough": "Manhattan",
+    "Zone": "Central Harlem",
+    "service_zone": "Boro Zone",
+    "lat": 40.80433,
+    "lon": -73.95129,
+    "is_airport": false
+  },
+  {
+    "LocationID": 42,
+    "Borough": "Manhattan",
+    "Zone": "Central Harlem North",
+    "service_zone": "Boro Zone",
+    "lat": 40.81826,
+    "lon": -73.94077,
+    "is_airport": false
+  },
+  {
+    "LocationID": 43,
+    "Borough": "Manhattan",
+    "Zone": "Central Park",
+    "service_zone": "Yellow Zone",
+    "lat": 40.78248,
+    "lon": -73.96555,
+    "is_airport": false
+  },
+  {
+    "LocationID": 45,
+    "Borough": "Manhattan",
+    "Zone": "Chinatown",
+    "service_zone": "Yellow Zone",
+    "lat": 40.71246,
+    "lon": -73.99815,
+    "is_airport": false
+  },
+  {
+    "LocationID": 48,
+    "Borough": "Manhattan",
+    "Zone": "Clinton East",
+    "service_zone": "Yellow Zone",
+    "lat": 40.76225,
+    "lon": -73.98984,
+    "is_airport": false
+  },
+  {
+    "LocationID": 50,
+    "Borough": "Manhattan",
+    "Zone": "Clinton West",
+    "service_zone": "Yellow Zone",
+    "lat": 40.76624,
+    "lon": -73.99513,
+    "is_airport": false
+  },
+  {
+    "LocationID": 68,
+    "Borough": "Manhattan",
+    "Zone": "East Chelsea",
+    "service_zone": "Yellow Zone",
+    "lat": 40.74843,
+    "lon": -73.99992,
+    "is_airport": false
+  },
+  {
+    "LocationID": 74,
+    "Borough": "Manhattan",
+    "Zone": "East Harlem North",
+    "service_zone": "Boro Zone",
+    "lat": 40.80117,
+    "lon": -73.93735,
+    "is_airport": false
+  },
+  {
+    "LocationID": 75,
+    "Borough": "Manhattan",
+    "Zone": "East Harlem South",
+    "service_zone": "Boro Zone",
+    "lat": 40.79001,
+    "lon": -73.94575,
+    "is_airport": false
+  },
+  {
+    "LocationID": 79,
+    "Borough": "Manhattan",
+    "Zone": "East Village",
+    "service_zone": "Yellow Zone",
+    "lat": 40.72762,
+    "lon": -73.98594,
+    "is_airport": false
+  },
+  {
+    "LocationID": 87,
+    "Borough": "Manhattan",
+    "Zone": "Financial District North",
+    "service_zone": "Yellow Zone",
+    "lat": 40.70681,
+    "lon": -74.0075,
+    "is_airport": false
+  },
+  {
+    "LocationID": 88,
+    "Borough": "Manhattan",
+    "Zone": "Financial District South",
+    "service_zone": "Yellow Zone",
+    "lat": 40.70336,
+    "lon": -74.01152,
+    "is_airport": false
+  },
+  {
+    "LocationID": 90,
+    "Borough": "Manhattan",
+    "Zone": "Flatiron",
+    "service_zone": "Yellow Zone",
+    "lat": 40.74228,
+    "lon": -73.99697,
+    "is_airport": false
+  },
+  {
+    "LocationID": 100,
+    "Borough": "Manhattan",
+    "Zone": "Garment District",
+    "service_zone": "Yellow Zone",
+    "lat": 40.75351,
+    "lon": -73.98879,
+    "is_airport": false
+  },
+  {
+    "LocationID": 103,
+    "Borough": "Manhattan",
+    "Zone": "Governor's Island/Ellis Island/Liberty Island",
+    "service_zone": "Yellow Zone",
+    "lat": 40.68986,
+    "lon": -74.04529,
+    "is_airport": false
+  },
+  {
+    "LocationID": 104,
+    "Borough": "Manhattan",
+    "Zone": "Governor's Island/Ellis Island/Liberty Island",
+    "service_zone": "Yellow Zone",
+    "lat": 40.69877,
+    "lon": -74.04077,
+    "is_airport": false
+  },
+  {
+    "LocationID": 105,
+    "Borough": "Manhattan",
+    "Zone": "Governor's Island/Ellis Island/Liberty Island",
+    "service_zone": "Yellow Zone",
+    "lat": 40.68878,
+    "lon": -74.01907,
+    "is_airport": false
+  },
+  {
+    "LocationID": 107,
+    "Borough": "Manhattan",
+    "Zone": "Gramercy",
+    "service_zone": "Yellow Zone",
+    "lat": 40.73682,
+    "lon": -73.98405,
+    "is_airport": false
+  },
+  {
+    "LocationID": 113,
+    "Borough": "Manhattan",
+    "Zone": "Greenwich Village North",
+    "service_zone": "Yellow Zone",
+    "lat": 40.73258,
+    "lon": -73.9943,
+    "is_airport": false
+  },
+  {
+    "LocationID": 114,
+    "Borough": "Manhattan",
+    "Zone": "Greenwich Village South",
+    "service_zone": "Yellow Zone",
+    "lat": 40.72834,
+    "lon": -73.99738,
+    "is_airport": false
+  },
+  {
+    "LocationID": 116,
+    "Borough": "Manhattan",
+    "Zone": "Hamilton Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.82701,
+    "lon": -73.94852,
+    "is_airport": false
+  },
+  {
+    "LocationID": 120,
+    "Borough": "Manhattan",
+    "Zone": "Highbridge Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.84667,
+    "lon": -73.93018,
+    "is_airport": false
+  },
+  {
+    "LocationID": 125,
+    "Borough": "Manhattan",
+    "Zone": "Hudson Sq",
+    "service_zone": "Yellow Zone",
+    "lat": 40.72629,
+    "lon": -74.00749,
+    "is_airport": false
+  },
+  {
+    "LocationID": 127,
+    "Borough": "Manhattan",
+    "Zone": "Inwood",
+    "service_zone": "Boro Zone",
+    "lat": 40.86607,
+    "lon": -73.91931,
+    "is_airport": false
+  },
+  {
+    "LocationID": 128,
+    "Borough": "Manhattan",
+    "Zone": "Inwood Hill Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.87238,
+    "lon": -73.92437,
+    "is_airport": false
+  },
+  {
+    "LocationID": 137,
+    "Borough": "Manhattan",
+    "Zone": "Kips Bay",
+    "service_zone": "Yellow Zone",
+    "lat": 40.74044,
+    "lon": -73.97649,
+    "is_airport": false
+  },
+  {
+    "LocationID": 140,
+    "Borough": "Manhattan",
+    "Zone": "Lenox Hill East",
+    "service_zone": "Yellow Zone",
+    "lat": 40.76548,
+    "lon": -73.95474,
+    "is_airport": false
+  },
+  {
+    "LocationID": 141,
+    "Borough": "Manhattan",
+    "Zone": "Lenox Hill West",
+    "service_zone": "Yellow Zone",
+    "lat": 40.76695,
+    "lon": -73.95963,
+    "is_airport": false
+  },
+  {
+    "LocationID": 142,
+    "Borough": "Manhattan",
+    "Zone": "Lincoln Square East",
+    "service_zone": "Yellow Zone",
+    "lat": 40.77363,
+    "lon": -73.98153,
+    "is_airport": false
+  },
+  {
+    "LocationID": 143,
+    "Borough": "Manhattan",
+    "Zone": "Lincoln Square West",
+    "service_zone": "Yellow Zone",
+    "lat": 40.77597,
+    "lon": -73.98765,
+    "is_airport": false
+  },
+  {
+    "LocationID": 144,
+    "Borough": "Manhattan",
+    "Zone": "Little Italy/NoLiTa",
+    "service_zone": "Yellow Zone",
+    "lat": 40.72089,
+    "lon": -73.99692,
+    "is_airport": false
+  },
+  {
+    "LocationID": 148,
+    "Borough": "Manhattan",
+    "Zone": "Lower East Side",
+    "service_zone": "Yellow Zone",
+    "lat": 40.71894,
+    "lon": -73.9909,
+    "is_airport": false
+  },
+  {
+    "LocationID": 151,
+    "Borough": "Manhattan",
+    "Zone": "Manhattan Valley",
+    "service_zone": "Yellow Zone",
+    "lat": 40.79796,
+    "lon": -73.96817,
+    "is_airport": false
+  },
+  {
+    "LocationID": 152,
+    "Borough": "Manhattan",
+    "Zone": "Manhattanville",
+    "service_zone": "Boro Zone",
+    "lat": 40.81798,
+    "lon": -73.95378,
+    "is_airport": false
+  },
+  {
+    "LocationID": 153,
+    "Borough": "Manhattan",
+    "Zone": "Marble Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.87597,
+    "lon": -73.91038,
+    "is_airport": false
+  },
+  {
+    "LocationID": 158,
+    "Borough": "Manhattan",
+    "Zone": "Meatpacking/West Village West",
+    "service_zone": "Yellow Zone",
+    "lat": 40.73504,
+    "lon": -74.00898,
+    "is_airport": false
+  },
+  {
+    "LocationID": 161,
+    "Borough": "Manhattan",
+    "Zone": "Midtown Center",
+    "service_zone": "Yellow Zone",
+    "lat": 40.75803,
+    "lon": -73.9777,
+    "is_airport": false
+  },
+  {
+    "LocationID": 162,
+    "Borough": "Manhattan",
+    "Zone": "Midtown East",
+    "service_zone": "Yellow Zone",
+    "lat": 40.75669,
+    "lon": -73.97236,
+    "is_airport": false
+  },
+  {
+    "LocationID": 163,
+    "Borough": "Manhattan",
+    "Zone": "Midtown North",
+    "service_zone": "Yellow Zone",
+    "lat": 40.76442,
+    "lon": -73.97757,
+    "is_airport": false
+  },
+  {
+    "LocationID": 164,
+    "Borough": "Manhattan",
+    "Zone": "Midtown South",
+    "service_zone": "Yellow Zone",
+    "lat": 40.74857,
+    "lon": -73.98516,
+    "is_airport": false
+  },
+  {
+    "LocationID": 166,
+    "Borough": "Manhattan",
+    "Zone": "Morningside Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.80946,
+    "lon": -73.96176,
+    "is_airport": false
+  },
+  {
+    "LocationID": 170,
+    "Borough": "Manhattan",
+    "Zone": "Murray Hill",
+    "service_zone": "Yellow Zone",
+    "lat": 40.74775,
+    "lon": -73.97849,
+    "is_airport": false
+  },
+  {
+    "LocationID": 186,
+    "Borough": "Manhattan",
+    "Zone": "Penn Station/Madison Sq West",
+    "service_zone": "Yellow Zone",
+    "lat": 40.7485,
+    "lon": -73.99244,
+    "is_airport": false
+  },
+  {
+    "LocationID": 194,
+    "Borough": "Manhattan",
+    "Zone": "Randalls Island",
+    "service_zone": "Yellow Zone",
+    "lat": 40.791,
+    "lon": -73.9246,
+    "is_airport": false
+  },
+  {
+    "LocationID": 202,
+    "Borough": "Manhattan",
+    "Zone": "Roosevelt Island",
+    "service_zone": "Boro Zone",
+    "lat": 40.7619,
+    "lon": -73.94995,
+    "is_airport": false
+  },
+  {
+    "LocationID": 209,
+    "Borough": "Manhattan",
+    "Zone": "Seaport",
+    "service_zone": "Yellow Zone",
+    "lat": 40.70907,
+    "lon": -74.00366,
+    "is_airport": false
+  },
+  {
+    "LocationID": 211,
+    "Borough": "Manhattan",
+    "Zone": "SoHo",
+    "service_zone": "Yellow Zone",
+    "lat": 40.72389,
+    "lon": -74.00154,
+    "is_airport": false
+  },
+  {
+    "LocationID": 224,
+    "Borough": "Manhattan",
+    "Zone": "Stuy Town/Peter Cooper Village",
+    "service_zone": "Yellow Zone",
+    "lat": 40.73182,
+    "lon": -73.9766,
+    "is_airport": false
+  },
+  {
+    "LocationID": 229,
+    "Borough": "Manhattan",
+    "Zone": "Sutton Place/Turtle Bay North",
+    "service_zone": "Yellow Zone",
+    "lat": 40.75673,
+    "lon": -73.96515,
+    "is_airport": false
+  },
+  {
+    "LocationID": 230,
+    "Borough": "Manhattan",
+    "Zone": "Times Sq/Theatre District",
+    "service_zone": "Yellow Zone",
+    "lat": 40.75982,
+    "lon": -73.9842,
+    "is_airport": false
+  },
+  {
+    "LocationID": 231,
+    "Borough": "Manhattan",
+    "Zone": "TriBeCa/Civic Center",
+    "service_zone": "Yellow Zone",
+    "lat": 40.71777,
+    "lon": -74.00788,
+    "is_airport": false
+  },
+  {
+    "LocationID": 232,
+    "Borough": "Manhattan",
+    "Zone": "Two Bridges/Seward Park",
+    "service_zone": "Yellow Zone",
+    "lat": 40.71473,
+    "lon": -73.98302,
+    "is_airport": false
+  },
+  {
+    "LocationID": 233,
+    "Borough": "Manhattan",
+    "Zone": "UN/Turtle Bay South",
+    "service_zone": "Yellow Zone",
+    "lat": 40.74991,
+    "lon": -73.97044,
+    "is_airport": false
+  },
+  {
+    "LocationID": 234,
+    "Borough": "Manhattan",
+    "Zone": "Union Sq",
+    "service_zone": "Yellow Zone",
+    "lat": 40.74034,
+    "lon": -73.99046,
+    "is_airport": false
+  },
+  {
+    "LocationID": 236,
+    "Borough": "Manhattan",
+    "Zone": "Upper East Side North",
+    "service_zone": "Yellow Zone",
+    "lat": 40.78044,
+    "lon": -73.95701,
+    "is_airport": false
+  },
+  {
+    "LocationID": 237,
+    "Borough": "Manhattan",
+    "Zone": "Upper East Side South",
+    "service_zone": "Yellow Zone",
+    "lat": 40.76862,
+    "lon": -73.96563,
+    "is_airport": false
+  },
+  {
+    "LocationID": 238,
+    "Borough": "Manhattan",
+    "Zone": "Upper West Side North",
+    "service_zone": "Yellow Zone",
+    "lat": 40.79171,
+    "lon": -73.97305,
+    "is_airport": false
+  },
+  {
+    "LocationID": 239,
+    "Borough": "Manhattan",
+    "Zone": "Upper West Side South",
+    "service_zone": "Yellow Zone",
+    "lat": 40.78396,
+    "lon": -73.97863,
+    "is_airport": false
+  },
+  {
+    "LocationID": 243,
+    "Borough": "Manhattan",
+    "Zone": "Washington Heights North",
+    "service_zone": "Boro Zone",
+    "lat": 40.85711,
+    "lon": -73.93283,
+    "is_airport": false
+  },
+  {
+    "LocationID": 244,
+    "Borough": "Manhattan",
+    "Zone": "Washington Heights South",
+    "service_zone": "Boro Zone",
+    "lat": 40.84171,
+    "lon": -73.9414,
+    "is_airport": false
+  },
+  {
+    "LocationID": 246,
+    "Borough": "Manhattan",
+    "Zone": "West Chelsea/Hudson Yards",
+    "service_zone": "Yellow Zone",
+    "lat": 40.75331,
+    "lon": -74.00402,
+    "is_airport": false
+  },
+  {
+    "LocationID": 249,
+    "Borough": "Manhattan",
+    "Zone": "West Village",
+    "service_zone": "Yellow Zone",
+    "lat": 40.73458,
+    "lon": -74.00288,
+    "is_airport": false
+  },
+  {
+    "LocationID": 261,
+    "Borough": "Manhattan",
+    "Zone": "World Trade Center",
+    "service_zone": "Yellow Zone",
+    "lat": 40.70914,
+    "lon": -74.01302,
+    "is_airport": false
+  },
+  {
+    "LocationID": 262,
+    "Borough": "Manhattan",
+    "Zone": "Yorkville East",
+    "service_zone": "Yellow Zone",
+    "lat": 40.77593,
+    "lon": -73.94651,
+    "is_airport": false
+  },
+  {
+    "LocationID": 263,
+    "Borough": "Manhattan",
+    "Zone": "Yorkville West",
+    "service_zone": "Yellow Zone",
+    "lat": 40.77877,
+    "lon": -73.95101,
+    "is_airport": false
+  },
+  {
+    "LocationID": 7,
+    "Borough": "Queens",
+    "Zone": "Astoria",
+    "service_zone": "Boro Zone",
+    "lat": 40.76149,
+    "lon": -73.91969,
+    "is_airport": false
+  },
+  {
+    "LocationID": 8,
+    "Borough": "Queens",
+    "Zone": "Astoria Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.77856,
+    "lon": -73.92309,
+    "is_airport": false
+  },
+  {
+    "LocationID": 9,
+    "Borough": "Queens",
+    "Zone": "Auburndale",
+    "service_zone": "Boro Zone",
+    "lat": 40.75104,
+    "lon": -73.78795,
+    "is_airport": false
+  },
+  {
+    "LocationID": 10,
+    "Borough": "Queens",
+    "Zone": "Baisley Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.67895,
+    "lon": -73.79099,
+    "is_airport": false
+  },
+  {
+    "LocationID": 15,
+    "Borough": "Queens",
+    "Zone": "Bay Terrace/Fort Totten",
+    "service_zone": "Boro Zone",
+    "lat": 40.78333,
+    "lon": -73.78597,
+    "is_airport": false
+  },
+  {
+    "LocationID": 16,
+    "Borough": "Queens",
+    "Zone": "Bayside",
+    "service_zone": "Boro Zone",
+    "lat": 40.76274,
+    "lon": -73.77342,
+    "is_airport": false
+  },
+  {
+    "LocationID": 19,
+    "Borough": "Queens",
+    "Zone": "Bellerose",
+    "service_zone": "Boro Zone",
+    "lat": 40.73549,
+    "lon": -73.72666,
+    "is_airport": false
+  },
+  {
+    "LocationID": 27,
+    "Borough": "Queens",
+    "Zone": "Breezy Point/Fort Tilden/Riis Beach",
+    "service_zone": "Boro Zone",
+    "lat": 40.55913,
+    "lon": -73.90691,
+    "is_airport": false
+  },
+  {
+    "LocationID": 28,
+    "Borough": "Queens",
+    "Zone": "Briarwood/Jamaica Hills",
+    "service_zone": "Boro Zone",
+    "lat": 40.7116,
+    "lon": -73.80873,
+    "is_airport": false
+  },
+  {
+    "LocationID": 30,
+    "Borough": "Queens",
+    "Zone": "Broad Channel",
+    "service_zone": "Boro Zone",
+    "lat": 40.60369,
+    "lon": -73.82193,
+    "is_airport": false
+  },
+  {
+    "LocationID": 38,
+    "Borough": "Queens",
+    "Zone": "Cambria Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.69434,
+    "lon": -73.73555,
+    "is_airport": false
+  },
+  {
+    "LocationID": 53,
+    "Borough": "Queens",
+    "Zone": "College Point",
+    "service_zone": "Boro Zone",
+    "lat": 40.78091,
+    "lon": -73.84281,
+    "is_airport": false
+  },
+  {
+    "LocationID": 56,
+    "Borough": "Queens",
+    "Zone": "Corona",
+    "service_zone": "Boro Zone",
+    "lat": 40.74141,
+    "lon": -73.85885,
+    "is_airport": false
+  },
+  {
+    "LocationID": 57,
+    "Borough": "Queens",
+    "Zone": "Corona",
+    "service_zone": "Boro Zone",
+    "lat": 40.75182,
+    "lon": -73.85358,
+    "is_airport": false
+  },
+  {
+    "LocationID": 64,
+    "Borough": "Queens",
+    "Zone": "Douglaston",
+    "service_zone": "Boro Zone",
+    "lat": 40.76062,
+    "lon": -73.73934,
+    "is_airport": false
+  },
+  {
+    "LocationID": 70,
+    "Borough": "Queens",
+    "Zone": "East Elmhurst",
+    "service_zone": "Boro Zone",
+    "lat": 40.76335,
+    "lon": -73.8684,
+    "is_airport": false
+  },
+  {
+    "LocationID": 73,
+    "Borough": "Queens",
+    "Zone": "East Flushing",
+    "service_zone": "Boro Zone",
+    "lat": 40.75411,
+    "lon": -73.80729,
+    "is_airport": false
+  },
+  {
+    "LocationID": 82,
+    "Borough": "Queens",
+    "Zone": "Elmhurst",
+    "service_zone": "Boro Zone",
+    "lat": 40.7395,
+    "lon": -73.87712,
+    "is_airport": false
+  },
+  {
+    "LocationID": 83,
+    "Borough": "Queens",
+    "Zone": "Elmhurst/Maspeth",
+    "service_zone": "Boro Zone",
+    "lat": 40.73832,
+    "lon": -73.89217,
+    "is_airport": false
+  },
+  {
+    "LocationID": 86,
+    "Borough": "Queens",
+    "Zone": "Far Rockaway",
+    "service_zone": "Boro Zone",
+    "lat": 40.60243,
+    "lon": -73.75524,
+    "is_airport": false
+  },
+  {
+    "LocationID": 92,
+    "Borough": "Queens",
+    "Zone": "Flushing",
+    "service_zone": "Boro Zone",
+    "lat": 40.7611,
+    "lon": -73.82886,
+    "is_airport": false
+  },
+  {
+    "LocationID": 93,
+    "Borough": "Queens",
+    "Zone": "Flushing Meadows-Corona Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.74068,
+    "lon": -73.84087,
+    "is_airport": false
+  },
+  {
+    "LocationID": 95,
+    "Borough": "Queens",
+    "Zone": "Forest Hills",
+    "service_zone": "Boro Zone",
+    "lat": 40.72143,
+    "lon": -73.84767,
+    "is_airport": false
+  },
+  {
+    "LocationID": 96,
+    "Borough": "Queens",
+    "Zone": "Forest Park/Highland Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.697,
+    "lon": -73.87156,
+    "is_airport": false
+  },
+  {
+    "LocationID": 98,
+    "Borough": "Queens",
+    "Zone": "Fresh Meadows",
+    "service_zone": "Boro Zone",
+    "lat": 40.73446,
+    "lon": -73.77725,
+    "is_airport": false
+  },
+  {
+    "LocationID": 101,
+    "Borough": "Queens",
+    "Zone": "Glen Oaks",
+    "service_zone": "Boro Zone",
+    "lat": 40.74599,
+    "lon": -73.71103,
+    "is_airport": false
+  },
+  {
+    "LocationID": 102,
+    "Borough": "Queens",
+    "Zone": "Glendale",
+    "service_zone": "Boro Zone",
+    "lat": 40.70355,
+    "lon": -73.87574,
+    "is_airport": false
+  },
+  {
+    "LocationID": 117,
+    "Borough": "Queens",
+    "Zone": "Hammels/Arverne",
+    "service_zone": "Boro Zone",
+    "lat": 40.59406,
+    "lon": -73.78962,
+    "is_airport": false
+  },
+  {
+    "LocationID": 121,
+    "Borough": "Queens",
+    "Zone": "Hillcrest/Pomonok",
+    "service_zone": "Boro Zone",
+    "lat": 40.72833,
+    "lon": -73.80244,
+    "is_airport": false
+  },
+  {
+    "LocationID": 122,
+    "Borough": "Queens",
+    "Zone": "Hollis",
+    "service_zone": "Boro Zone",
+    "lat": 40.71064,
+    "lon": -73.76114,
+    "is_airport": false
+  },
+  {
+    "LocationID": 124,
+    "Borough": "Queens",
+    "Zone": "Howard Beach",
+    "service_zone": "Boro Zone",
+    "lat": 40.65825,
+    "lon": -73.84492,
+    "is_airport": false
+  },
+  {
+    "LocationID": 132,
+    "Borough": "Queens",
+    "Zone": "JFK Airport",
+    "service_zone": "Airports",
+    "lat": 40.64698,
+    "lon": -73.78653,
+    "is_airport": true
+  },
+  {
+    "LocationID": 129,
+    "Borough": "Queens",
+    "Zone": "Jackson Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.75731,
+    "lon": -73.88532,
+    "is_airport": false
+  },
+  {
+    "LocationID": 130,
+    "Borough": "Queens",
+    "Zone": "Jamaica",
+    "service_zone": "Boro Zone",
+    "lat": 40.70437,
+    "lon": -73.79398,
+    "is_airport": false
+  },
+  {
+    "LocationID": 2,
+    "Borough": "Queens",
+    "Zone": "Jamaica Bay",
+    "service_zone": "Boro Zone",
+    "lat": 40.61675,
+    "lon": -73.8313,
+    "is_airport": false
+  },
+  {
+    "LocationID": 131,
+    "Borough": "Queens",
+    "Zone": "Jamaica Estates",
+    "service_zone": "Boro Zone",
+    "lat": 40.72066,
+    "lon": -73.7761,
+    "is_airport": false
+  },
+  {
+    "LocationID": 134,
+    "Borough": "Queens",
+    "Zone": "Kew Gardens",
+    "service_zone": "Boro Zone",
+    "lat": 40.70805,
+    "lon": -73.82871,
+    "is_airport": false
+  },
+  {
+    "LocationID": 135,
+    "Borough": "Queens",
+    "Zone": "Kew Gardens Hills",
+    "service_zone": "Boro Zone",
+    "lat": 40.72838,
+    "lon": -73.8212,
+    "is_airport": false
+  },
+  {
+    "LocationID": 138,
+    "Borough": "Queens",
+    "Zone": "LaGuardia Airport",
+    "service_zone": "Airports",
+    "lat": 40.77438,
+    "lon": -73.87363,
+    "is_airport": true
+  },
+  {
+    "LocationID": 139,
+    "Borough": "Queens",
+    "Zone": "Laurelton",
+    "service_zone": "Boro Zone",
+    "lat": 40.6771,
+    "lon": -73.74423,
+    "is_airport": false
+  },
+  {
+    "LocationID": 145,
+    "Borough": "Queens",
+    "Zone": "Long Island City/Hunters Point",
+    "service_zone": "Boro Zone",
+    "lat": 40.74538,
+    "lon": -73.94889,
+    "is_airport": false
+  },
+  {
+    "LocationID": 146,
+    "Borough": "Queens",
+    "Zone": "Long Island City/Queens Plaza",
+    "service_zone": "Boro Zone",
+    "lat": 40.75424,
+    "lon": -73.93483,
+    "is_airport": false
+  },
+  {
+    "LocationID": 157,
+    "Borough": "Queens",
+    "Zone": "Maspeth",
+    "service_zone": "Boro Zone",
+    "lat": 40.72399,
+    "lon": -73.90233,
+    "is_airport": false
+  },
+  {
+    "LocationID": 160,
+    "Borough": "Queens",
+    "Zone": "Middle Village",
+    "service_zone": "Boro Zone",
+    "lat": 40.71834,
+    "lon": -73.88005,
+    "is_airport": false
+  },
+  {
+    "LocationID": 171,
+    "Borough": "Queens",
+    "Zone": "Murray Hill-Queens",
+    "service_zone": "Boro Zone",
+    "lat": 40.76835,
+    "lon": -73.80955,
+    "is_airport": false
+  },
+  {
+    "LocationID": 173,
+    "Borough": "Queens",
+    "Zone": "North Corona",
+    "service_zone": "Boro Zone",
+    "lat": 40.75258,
+    "lon": -73.86304,
+    "is_airport": false
+  },
+  {
+    "LocationID": 175,
+    "Borough": "Queens",
+    "Zone": "Oakland Gardens",
+    "service_zone": "Boro Zone",
+    "lat": 40.74267,
+    "lon": -73.75462,
+    "is_airport": false
+  },
+  {
+    "LocationID": 179,
+    "Borough": "Queens",
+    "Zone": "Old Astoria",
+    "service_zone": "Boro Zone",
+    "lat": 40.77157,
+    "lon": -73.92833,
+    "is_airport": false
+  },
+  {
+    "LocationID": 180,
+    "Borough": "Queens",
+    "Zone": "Ozone Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.67559,
+    "lon": -73.84704,
+    "is_airport": false
+  },
+  {
+    "LocationID": 191,
+    "Borough": "Queens",
+    "Zone": "Queens Village",
+    "service_zone": "Boro Zone",
+    "lat": 40.71545,
+    "lon": -73.74153,
+    "is_airport": false
+  },
+  {
+    "LocationID": 192,
+    "Borough": "Queens",
+    "Zone": "Queensboro Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.74375,
+    "lon": -73.81523,
+    "is_airport": false
+  },
+  {
+    "LocationID": 193,
+    "Borough": "Queens",
+    "Zone": "Queensbridge/Ravenswood",
+    "service_zone": "Boro Zone",
+    "lat": 40.76031,
+    "lon": -73.942,
+    "is_airport": false
+  },
+  {
+    "LocationID": 196,
+    "Borough": "Queens",
+    "Zone": "Rego Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.72616,
+    "lon": -73.86334,
+    "is_airport": false
+  },
+  {
+    "LocationID": 197,
+    "Borough": "Queens",
+    "Zone": "Richmond Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.69454,
+    "lon": -73.83092,
+    "is_airport": false
+  },
+  {
+    "LocationID": 198,
+    "Borough": "Queens",
+    "Zone": "Ridgewood",
+    "service_zone": "Boro Zone",
+    "lat": 40.70653,
+    "lon": -73.90171,
+    "is_airport": false
+  },
+  {
+    "LocationID": 201,
+    "Borough": "Queens",
+    "Zone": "Rockaway Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.57798,
+    "lon": -73.84345,
+    "is_airport": false
+  },
+  {
+    "LocationID": 203,
+    "Borough": "Queens",
+    "Zone": "Rosedale",
+    "service_zone": "Boro Zone",
+    "lat": 40.65785,
+    "lon": -73.73947,
+    "is_airport": false
+  },
+  {
+    "LocationID": 205,
+    "Borough": "Queens",
+    "Zone": "Saint Albans",
+    "service_zone": "Boro Zone",
+    "lat": 40.6912,
+    "lon": -73.76315,
+    "is_airport": false
+  },
+  {
+    "LocationID": 207,
+    "Borough": "Queens",
+    "Zone": "Saint Michaels Cemetery/Woodside",
+    "service_zone": "Boro Zone",
+    "lat": 40.76399,
+    "lon": -73.89935,
+    "is_airport": false
+  },
+  {
+    "LocationID": 215,
+    "Borough": "Queens",
+    "Zone": "South Jamaica",
+    "service_zone": "Boro Zone",
+    "lat": 40.69443,
+    "lon": -73.79096,
+    "is_airport": false
+  },
+  {
+    "LocationID": 216,
+    "Borough": "Queens",
+    "Zone": "South Ozone Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.67615,
+    "lon": -73.81946,
+    "is_airport": false
+  },
+  {
+    "LocationID": 218,
+    "Borough": "Queens",
+    "Zone": "Springfield Gardens North",
+    "service_zone": "Boro Zone",
+    "lat": 40.67209,
+    "lon": -73.77304,
+    "is_airport": false
+  },
+  {
+    "LocationID": 219,
+    "Borough": "Queens",
+    "Zone": "Springfield Gardens South",
+    "service_zone": "Boro Zone",
+    "lat": 40.66218,
+    "lon": -73.76451,
+    "is_airport": false
+  },
+  {
+    "LocationID": 223,
+    "Borough": "Queens",
+    "Zone": "Steinway",
+    "service_zone": "Boro Zone",
+    "lat": 40.77743,
+    "lon": -73.90541,
+    "is_airport": false
+  },
+  {
+    "LocationID": 226,
+    "Borough": "Queens",
+    "Zone": "Sunnyside",
+    "service_zone": "Boro Zone",
+    "lat": 40.7377,
+    "lon": -73.92467,
+    "is_airport": false
+  },
+  {
+    "LocationID": 252,
+    "Borough": "Queens",
+    "Zone": "Whitestone",
+    "service_zone": "Boro Zone",
+    "lat": 40.78819,
+    "lon": -73.81566,
+    "is_airport": false
+  },
+  {
+    "LocationID": 253,
+    "Borough": "Queens",
+    "Zone": "Willets Point",
+    "service_zone": "Boro Zone",
+    "lat": 40.76063,
+    "lon": -73.84124,
+    "is_airport": false
+  },
+  {
+    "LocationID": 258,
+    "Borough": "Queens",
+    "Zone": "Woodhaven",
+    "service_zone": "Boro Zone",
+    "lat": 40.68872,
+    "lon": -73.85577,
+    "is_airport": false
+  },
+  {
+    "LocationID": 260,
+    "Borough": "Queens",
+    "Zone": "Woodside",
+    "service_zone": "Boro Zone",
+    "lat": 40.74423,
+    "lon": -73.90631,
+    "is_airport": false
+  },
+  {
+    "LocationID": 5,
+    "Borough": "Staten Island",
+    "Zone": "Arden Heights",
+    "service_zone": "Boro Zone",
+    "lat": 40.55266,
+    "lon": -74.18848,
+    "is_airport": false
+  },
+  {
+    "LocationID": 6,
+    "Borough": "Staten Island",
+    "Zone": "Arrochar/Fort Wadsworth",
+    "service_zone": "Boro Zone",
+    "lat": 40.60032,
+    "lon": -74.07177,
+    "is_airport": false
+  },
+  {
+    "LocationID": 23,
+    "Borough": "Staten Island",
+    "Zone": "Bloomfield/Emerson Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.60645,
+    "lon": -74.17089,
+    "is_airport": false
+  },
+  {
+    "LocationID": 44,
+    "Borough": "Staten Island",
+    "Zone": "Charleston/Tottenville",
+    "service_zone": "Boro Zone",
+    "lat": 40.52549,
+    "lon": -74.23353,
+    "is_airport": false
+  },
+  {
+    "LocationID": 84,
+    "Borough": "Staten Island",
+    "Zone": "Eltingville/Annadale/Prince's Bay",
+    "service_zone": "Boro Zone",
+    "lat": 40.52869,
+    "lon": -74.18767,
+    "is_airport": false
+  },
+  {
+    "LocationID": 99,
+    "Borough": "Staten Island",
+    "Zone": "Freshkills Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.57677,
+    "lon": -74.18642,
+    "is_airport": false
+  },
+  {
+    "LocationID": 109,
+    "Borough": "Staten Island",
+    "Zone": "Great Kills",
+    "service_zone": "Boro Zone",
+    "lat": 40.55186,
+    "lon": -74.15089,
+    "is_airport": false
+  },
+  {
+    "LocationID": 110,
+    "Borough": "Staten Island",
+    "Zone": "Great Kills Park",
+    "service_zone": "Boro Zone",
+    "lat": 40.54578,
+    "lon": -74.12834,
+    "is_airport": false
+  },
+  {
+    "LocationID": 115,
+    "Borough": "Staten Island",
+    "Zone": "Grymes Hill/Clifton",
+    "service_zone": "Boro Zone",
+    "lat": 40.61797,
+    "lon": -74.08784,
+    "is_airport": false
+  },
+  {
+    "LocationID": 118,
+    "Borough": "Staten Island",
+    "Zone": "Heartland Village/Todt Hill",
+    "service_zone": "Boro Zone",
+    "lat": 40.58655,
+    "lon": -74.13298,
+    "is_airport": false
+  },
+  {
+    "LocationID": 156,
+    "Borough": "Staten Island",
+    "Zone": "Mariners Harbor",
+    "service_zone": "Boro Zone",
+    "lat": 40.63131,
+    "lon": -74.16724,
+    "is_airport": false
+  },
+  {
+    "LocationID": 172,
+    "Borough": "Staten Island",
+    "Zone": "New Dorp/Midland Beach",
+    "service_zone": "Boro Zone",
+    "lat": 40.57177,
+    "lon": -74.10502,
+    "is_airport": false
+  },
+  {
+    "LocationID": 176,
+    "Borough": "Staten Island",
+    "Zone": "Oakwood",
+    "service_zone": "Boro Zone",
+    "lat": 40.56199,
+    "lon": -74.12258,
+    "is_airport": false
+  },
+  {
+    "LocationID": 187,
+    "Borough": "Staten Island",
+    "Zone": "Port Richmond",
+    "service_zone": "Boro Zone",
+    "lat": 40.62817,
+    "lon": -74.14079,
+    "is_airport": false
+  },
+  {
+    "LocationID": 204,
+    "Borough": "Staten Island",
+    "Zone": "Rossville/Woodrow",
+    "service_zone": "Boro Zone",
+    "lat": 40.54033,
+    "lon": -74.20783,
+    "is_airport": false
+  },
+  {
+    "LocationID": 206,
+    "Borough": "Staten Island",
+    "Zone": "Saint George/New Brighton",
+    "service_zone": "Boro Zone",
+    "lat": 40.63897,
+    "lon": -74.10231,
+    "is_airport": false
+  },
+  {
+    "LocationID": 214,
+    "Borough": "Staten Island",
+    "Zone": "South Beach/Dongan Hills",
+    "service_zone": "Boro Zone",
+    "lat": 40.58679,
+    "lon": -74.08551,
+    "is_airport": false
+  },
+  {
+    "LocationID": 221,
+    "Borough": "Staten Island",
+    "Zone": "Stapleton",
+    "service_zone": "Boro Zone",
+    "lat": 40.61877,
+    "lon": -74.0737,
+    "is_airport": false
+  },
+  {
+    "LocationID": 245,
+    "Borough": "Staten Island",
+    "Zone": "West Brighton",
+    "service_zone": "Boro Zone",
+    "lat": 40.63005,
+    "lon": -74.10286,
+    "is_airport": false
+  },
+  {
+    "LocationID": 251,
+    "Borough": "Staten Island",
+    "Zone": "Westerleigh",
+    "service_zone": "Boro Zone",
+    "lat": 40.61688,
+    "lon": -74.12535,
+    "is_airport": false
+  }
+]
