@@ -24,3 +24,6 @@ serviceAccountKey.json
 .vscode/
 .DS_Store
 Thumbs.db
+
+!data/dashboard_sample.parquet
+!data/taxi_zone_lookup.json
