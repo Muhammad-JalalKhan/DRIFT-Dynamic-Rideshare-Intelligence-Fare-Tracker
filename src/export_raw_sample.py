@@ -7,7 +7,7 @@ def export_raw_sample(sample_size: int = 10000, output_path: str = "data/raw_sam
 
     for initial team inspection and data understanding.
     """
-    print("Fetching raw sample records via DuckDB...")
+    print("Fetching raw sample records via DuckDB...") 
     
     # 1. Stream raw trips from cloud CDN
     con = duckdb.connect(database=':memory:')
